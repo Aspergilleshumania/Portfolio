@@ -13,26 +13,38 @@
             color: white;
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            line-height: 1.6; /* Improved readability */
+            line-height: 1.6;
         }
 
         /* Navigation */
         nav {
             background-color: #080808;
-            padding: 20px;
-            text-align: right;
+            padding: 10px; /* Reduced padding for mobile */
+            text-align: center; /* Center align on mobile */
             border-bottom: 1px solid #181818;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
+        nav ul {
+            display: flex;
+            justify-content: center; /* Center align nav items */
+            padding: 0;
+            margin: 10px 0 0; /* Adjusted margin */
+        }
+
+        nav li {
+            list-style: none;
+            margin: 0 10px; /* Reduced margin between nav items */
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
             transition: color 0.3s ease;
             position: relative;
+            font-size: 0.9rem; /* Slightly smaller font size for mobile */
         }
 
         nav a:hover,
@@ -45,13 +57,13 @@
         nav a.active::after {
             content: '';
             position: absolute;
-            left: 0;
+            left: 50%; /* Center the underline */
             bottom: -5px;
-            width: 100%;
+            width: 50%; /* Shorter underline */
             height: 2px;
             background-color: #c780eb;
             transform: scaleX(0);
-            transform-origin: left;
+            transform-origin: center; /* Center the scaling */
             transition: transform 0.3s ease;
         }
 
@@ -62,16 +74,17 @@
 
         /* Reusable Styles */
         .glow-border {
-            border: 5px solid #9d4edd;
+            border: 3px solid #9d4edd; /* Reduced border width for mobile */
             border-radius: 50%;
-            box-shadow: 0 0 15px #9d4edd;
+            box-shadow: 0 0 10px #9d4edd; /* Reduced shadow for mobile */
         }
 
         .btn-primary {
             background: #9d4edd;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 8px 16px; /* Reduced padding for mobile */
+            border-radius: 20px; /* Slightly smaller radius */
             transition: 0.3s;
+            font-size: 0.8rem; /* Smaller font size for buttons */
         }
 
         .btn-primary:hover {
@@ -80,9 +93,10 @@
 
         .btn-outline {
             border: 2px solid #9d4edd;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 8px 16px; /* Reduced padding for mobile */
+            border-radius: 20px; /* Slightly smaller radius */
             transition: 0.3s;
+            font-size: 0.8rem; /* Smaller font size for buttons */
         }
 
         .btn-outline:hover {
@@ -91,18 +105,18 @@
 
         .underline-purple {
             display: inline-block;
-            border-bottom: 4px solid #9d4edd;
-            padding-bottom: 5px;
+            border-bottom: 3px solid #9d4edd; /* Reduced underline thickness */
+            padding-bottom: 3px; /* Reduced padding */
         }
 
         .progress-bar {
-            height: 10px;
+            height: 8px; /* Reduced height for mobile */
             background-color: #ddd;
-            border-radius: 5px;
+            border-radius: 4px; /* Reduced radius */
             overflow: hidden;
-            margin-top: 8px;
+            margin-top: 6px; /* Reduced margin */
             position: relative;
-            width: 100%; /* Full width within container */
+            width: 100%;
         }
 
         .progress-fill {
@@ -115,16 +129,16 @@
         .progress-text {
             position: absolute;
             right: 0;
-            top: -20px;
-            font-size: 14px;
+            top: -16px; /* Adjusted position */
+            font-size: 12px; /* Smaller font size */
             color: purple;
             display: none;
         }
 
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
+            transform: translateY(10px); /* Reduced transform distance */
+            transition: opacity 0.8s ease, transform 0.8s ease; /* Slightly faster transition */
         }
 
         .fade-in.visible {
@@ -133,116 +147,118 @@
         }
 
         .hover-effect:hover {
-            transform: scale(1.02);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.01); /* Reduced scale effect */
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow effect */
         }
 
         /* Section Styles */
         section {
-            padding: 40px 20px; /* Consistent section padding */
+            padding: 30px 15px; /* Reduced section padding */
         }
 
         section:first-of-type {
-            border-bottom: 2px solid #181818;
+            border-bottom: 1px solid #181818; /* Thinner border */
         }
 
         #home {
             background-color: #121018;
-            min-height: 100vh; /* Full viewport height */
+            min-height: 80vh; /* Reduced height */
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             border-bottom: none;
-            margin-bottom: -125px; /* Added margin at the bottom of the home section */
+            margin-bottom: -75px; /* Reduced margin */
         }
 
         #home h1 {
-            font-size: 3.5rem; /* Adjusted for prominence */
-            margin-bottom: 10px;
+            font-size: 2.5rem; /* Adjusted for prominence */
+            margin-bottom: 8px;
         }
 
         #home p.mt-3 {
-            margin-top: 10px;
+            margin-top: 8px;
             color: #ddd;
+            font-size: 0.9rem; /* Smaller font size */
         }
 
         #home .mt-5 {
-            margin-top: 25px; /* Increased button spacing */
+            margin-top: 20px; /* Reduced button spacing */
         }
 
         #skills {
             background-color: #101010;
-            min-height: 75vh;
-            margin-top: 100px; /* Increased spacing between sections */
-            margin-bottom: -125px;
+            min-height: 50vh; /* Reduced height */
+            margin-top: 80px; /* Reduced spacing */
+            margin-bottom: -75px;
             border-bottom: none;
             text-align: center;
         }
 
         #about {
-            min-height: 75vh;
+            min-height: 50vh; /* Reduced height */
             background-color: #0e0e0e;
-            margin-top: 120px; /* Increased spacing between sections */
-            margin-bottom: -125px;
+            margin-top: 90px; /* Reduced spacing */
+            margin-bottom: -75px;
             text-align: center;
             border-bottom: none;
         }
 
         #projects {
-            min-height: 75vh;
+            min-height: 50vh; /* Reduced height */
             background-color: #121018;
-            margin-top: 120px; /* Increased spacing between sections */
-            margin-bottom: -125px;
+            margin-top: 90px; /* Reduced spacing */
+            margin-bottom: -75px;
             text-align: center;
             border-bottom: none;
         }
 
         #contact {
-            min-height: 25vh;
+            min-height: 20vh; /* Reduced height */
             background-color: #101010;
-            margin-top: 120px; /* Increased spacing between sections */
+            margin-top: 90px; /* Reduced spacing */
             text-align: center;
         }
 
         /* Heading Styles */
         h2 {
-            font-size: 2.5em;
-            margin-bottom: 10px; /* Reduced spacing */
+            font-size: 2em; /* Reduced size */
+            margin-bottom: 8px;
             color: #c780eb;
         }
 
         /* Skills Section */
         #skills .max-w-2xl {
-            max-width: 600px; /* Adjusted max width */
+            max-width: 90%; /* Take up more width on mobile */
             margin: 0 auto;
         }
 
         #skills .mb-4 {
-            margin-bottom: 20px; /* Increased spacing */
+            margin-bottom: 16px; /* Reduced spacing */
         }
 
         /* Projects Section */
-
         #projects p {
-            line-height: 1.6;
-            margin-bottom: 30px;
+            line-height: 1.4; /* Adjusted line height */
+            margin-bottom: 20px;
             color: #ddd;
+            font-size: 0.9rem; /* Smaller font size */
         }
 
         #projects .filter-buttons {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         #projects .filter-buttons button {
             background-color: #333;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 16px; /* Reduced padding */
             border: none;
-            border-radius: 25px;
-            margin: 5px;
+            border-radius: 20px; /* Reduced radius */
+            margin: 4px; /* Reduced margin */
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-size: 0.75rem; /* Smaller font size */
         }
 
         #projects .filter-buttons button.active,
@@ -252,8 +268,8 @@
 
         #projects .project-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr; /* Single column on mobile */
+            gap: 20px; /* Reduced gap */
         }
 
         .project-item {
@@ -264,13 +280,13 @@
         .project-item img {
             width: 100%;
             height: auto;
-            max-height: 500px;
-            border-radius: 10px;
+            max-height: 300px; /* Reduced max height */
+            border-radius: 8px; /* Reduced radius */
             transition: transform 0.3s ease;
         }
 
         .project-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05); /* Reduced scale effect */
         }
 
         .project-item .project-overlay {
@@ -295,12 +311,12 @@
         }
 
         .project-item .project-overlay h3 {
-            margin-bottom: 5px;
-            font-size: 1.5em;
+            margin-bottom: 3px; /* Reduced margin */
+            font-size: 1.2em; /* Reduced font size */
         }
 
         .project-item .project-overlay p {
-            font-size: 1em;
+            font-size: 0.9em; /* Reduced font size */
         }
 
         #projects,
@@ -314,7 +330,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 1px; /* Thinner line */
             background: linear-gradient(to bottom, transparent, #0e0e0e);
         }
 
@@ -335,38 +351,33 @@
             right: 0;
             background: rgba(0, 0, 0, 0.7);
             color: white;
-            padding: 10px;
+            padding: 8px; /* Reduced padding */
             text-align: right;
         }
 
         .blog-preview-title {
-            font-size: 1.2em;
+            font-size: 1em; /* Reduced font size */
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 3px; /* Reduced margin */
         }
 
         .blog-preview-subtitle {
-            font-size: 0.9em;
-        }
-
-        #projects,
-        #contact {
-            position: relative;
+            font-size: 0.8em; /* Reduced font size */
         }
 
         #projects .project-item:first-child img,
         #projects .project-item:nth-child(2) img {
             width: 100%;
             height: auto;
-            max-height: 500px;
-            border-radius: 10px;
+            max-height: 300px; /* Reduced max height */
+            border-radius: 8px; /* Reduced radius */
         }
 
         #projects .project-item:first-child .project-overlay,
         #projects .project-item:nth-child(2) .project-overlay {
             justify-content: flex-end;
             align-items: flex-end;
-            padding: 20px;
+            padding: 10px; /* Reduced padding */
             text-align: right;
             color: white;
         }
@@ -377,41 +388,40 @@
 
         /* About Section */
         #about .max-w-3xl {
-            max-width: 800px; /* Adjusted max width */
+            max-width: 90%; /* Take up more width on mobile */
             margin: 0 auto;
         }
 
         /* Contact Section */
         #contact .max-w-3xl {
-            max-width: 800px; /* Adjusted max width */
+            max-width: 90%; /* Take up more width on mobile */
             margin: 0 auto;
         }
 
         .contact-info {
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Stack contact items vertically */
             align-items: center;
-            flex-wrap: wrap; /* Wrap on smaller screens */
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin: 10px 20px; /* Adjusted spacing */
+            margin: 8px 0; /* Reduced vertical margin */
             color: #9d4edd;
             cursor: pointer;
         }
 
         .contact-item .icon-container {
-            width: 40px;
-            height: 40px;
+            width: 30px; /* Reduced size */
+            height: 30px; /* Reduced size */
             border-radius: 50%;
             background-color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 10px;
+            margin-right: 8px; /* Reduced margin */
             transition: background-color 0.3s ease;
         }
 
@@ -420,8 +430,8 @@
         }
 
         .contact-item img {
-            width: 20px;
-            height: 20px;
+            width: 16px; /* Reduced size */
+            height: 16px; /* Reduced size */
             filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(248deg) brightness(95%) contrast(93%);
             transition: filter 0.3s ease;
         }
@@ -433,18 +443,18 @@
         .social-links {
             display: flex;
             justify-content: center;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .social-links a {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
+            width: 30px; /* Reduced size */
+            height: 30px; /* Reduced size */
             border-radius: 50%;
             background-color: #333;
-            margin: 0 10px;
+            margin: 0 8px; /* Reduced margin */
             transition: background-color 0.3s ease;
         }
 
@@ -453,8 +463,8 @@
         }
 
         .social-links img {
-            width: 20px;
-            height: 20px;
+            width: 16px; /* Reduced size */
+            height: 16px; /* Reduced size */
             filter: invert(100%);
             transition: filter 0.3s ease;
         }
@@ -464,8 +474,8 @@
         }
 
         .copyright {
-            margin-top: 50px;
-            font-size: 0.8em;
+            margin-top: 30px;
+            font-size: 0.7em;
             color: #aaa;
         }
 
@@ -487,66 +497,66 @@
 </head>
 
 <body>
-    <nav class="p-4 flex justify-between items-center text-white">
-        <div class="text-2xl font-bold text-purple-400">
+    <nav class="p-2 flex justify-between items-center text-white">
+        <div class="text-xl font-bold text-purple-400">
             PORTFOLIO
         </div>
-        <ul class="flex space-x-6">
+        <ul class="flex space-x-4">
             <li><a href="#" id="home-nav">Home</a></li>
             <li><a href="#" id="skills-nav">Skills</a></li>
             <li><a href="#" id="about-nav">About</a></li>
             <li><a href="#" id="projects-nav">Projects</a></li>
         </ul>
     </nav>
-    
+
     <section id="home" class="flex justify-center items-center min-h-screen">
         <div class="text-center">
-            <h1 class="text-5xl font-bold">Hi, I'm <span class="text-purple-400 underline-purple">Kaushik</span>
+            <h1 class="text-3xl font-bold">Hi, I'm <span class="text-purple-400 underline-purple">Kaushik</span>
             </h1>
-            <p class="mt-3 text-lg text-gray-300">A passionate software developer.</p>
-            <p class="mt-3 text-md text-gray-400">I specialize in building dynamic websites using Django and
+            <p class="mt-2 text-lg text-gray-300">A passionate software developer.</p>
+            <p class="mt-2 text-sm text-gray-400">I specialize in building dynamic websites using Django and
                 continuously explore new technologies to optimize performance and user experience.</p>
-            <div class="mt-5">
-                <button class="btn-outline ml-3">Contact Me</button>
+            <div class="mt-4">
+                <button class="btn-outline">Contact Me</button>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="w-full text-white p-10 text-center fade-in rounded-lg hover-effect">
-        <h2 class="text-3xl font-bold mb-2">SKILLS</h2>
-        <div style="width: 80px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
-        <p class="text-gray-400 mb-6">My professional expertise and technical proficiency</p>
+    <section id="skills" class="w-full text-white p-6 text-center fade-in rounded-lg hover-effect">
+        <h2 class="text-2xl font-bold mb-2">SKILLS</h2>
+        <div style="width: 40px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+        <p class="text-gray-400 mb-4">My professional expertise and technical proficiency</p>
         <div class="max-w-2xl mx-auto">
-            <div class="mb-4">
-                <span class="block text-left">Python</span>
+            <div class="mb-3">
+                <span class="block text-left text-sm">Python</span>
                 <span class="progress-text">75%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="75%"></div>
                 </div>
             </div>
-            <div class="mb-4">
-                <span class="block text-left">Django</span>
+            <div class="mb-3">
+                <span class="block text-left text-sm">Django</span>
                 <span class="progress-text">60%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="60%"></div>
                 </div>
             </div>
-            <div class="mb-4">
-                <span class="block text-left">JavaScript</span>
+            <div class="mb-3">
+                <span class="block text-left text-sm">JavaScript</span>
                 <span class="progress-text">65%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="65%"></div>
                 </div>
             </div>
-            <div class="mb-4">
-                <span class="block text-left">HTML & CSS</span>
+            <div class="mb-3">
+                <span class="block text-left text-sm">HTML & CSS</span>
                 <span class="progress-text">90%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="90%"></div>
                 </div>
             </div>
-            <div class="mb-4">
-                <span class="block text-left">MySQL</span>
+            <div class="mb-3">
+                <span class="block text-left text-sm">MySQL</span>
                 <span class="progress-text">80%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="80%"></div>
@@ -556,48 +566,48 @@
     </section>
 
 
-    <section id="projects" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
+    <section id="projects" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-2">PORTFOLIO</h2>
-            <div style="width: 50px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
-            <p class="text-gray-400 mb-6">Selected projects showcasing my creative work</p>
+            <h2 class="text-2xl font-bold mb-2">PORTFOLIO</h2>
+            <div style="width: 30px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+            <p class="text-gray-400 mb-4 text-sm">Selected projects showcasing my creative work</p>
             <div class="project-grid">
                 <div class="project-item">
                     <a href="https://github.com/Aspergilleshumania/BlogSphere" target="_blank" style="display: block;">
-                        <img src="BlogSphere.png" alt="BlogSphere" style="height:300px; width:900px;">
+                        <img src="BlogSphere.png" alt="BlogSphere" style="max-height: 200px; width: 100%; object-fit: cover;">
                         <div class="project-overlay">
                             <h3>BlogSphere</h3>
-                            <p>Full Stack Website using Django Framework</p>
+                            <p class="text-sm">Full Stack Website using Django Framework</p>
                         </div>
                     </a>
                 </div>
                 <div class="project-item">
                     <a href="https://github.com/rahulp0817/automation-workflow" target="_blank" style="display: block;">
-                    <img src="CogniTask.png" alt="CogniTask" style="height:300px; width:900px;">
-                    <div class="project-overlay">
-                        <h3>CogniTask</h3>
-                        <p>Automation Platform</p>
-                    </div>
+                        <img src="CogniTask.png" alt="CogniTask" style="max-height: 200px; width: 100%; object-fit: cover;">
+                        <div class="project-overlay">
+                            <h3>CogniTask</h3>
+                            <p class="text-sm">Automation Platform</p>
+                        </div>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    
-    
-    <section id="about" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
+
+
+    <section id="about" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4">ABOUT ME</h2>
-            <div style="width: 80px; height: 5px; margin: 0 auto 15px; background-image: linear-gradient(to right, #9d4edd, #eb8099)"></div>
-            <p class="mb-6 text-lg text-gray-300" style="line-height: 1.8;">
+            <h2 class="text-2xl font-bold mb-3">ABOUT ME</h2>
+            <div style="width: 40px; height: 3px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099)"></div>
+            <p class="mb-4 text-lg text-gray-300" style="line-height: 1.6; font-size: 0.9rem;">
                 I am a dedicated and skilled individual with a growing expertise in software development,
                 particularly in Python and the Django Framework. I am passionate about crafting efficient,
                 user-friendly, and dynamic web applications. I possess a strong foundation in database
                 management, networking principles, and operating systems, which allows me to approach
                 development with a holistic understanding of the technology stack.
             </p>
-    
-            <p class="text-lg text-gray-300" style="line-height: 1.8;">
+
+            <p class="text-lg text-gray-300" style="line-height: 1.6; font-size: 0.9rem;">
                 My focus is on building responsive and engaging websites using the Django Framework. I strive to
                 create solutions that are not only functional but also deliver a unique and seamless user
                 experience. I am eager to apply my technical abilities and contribute to challenging projects
@@ -605,42 +615,42 @@
             </p>
         </div>
     </section>
-    
-    
-    <section id="contact" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
+
+
+    <section id="contact" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-2">Get in touch</h2>
-            <div style="width: 80px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
-            <p>Have a project in mind? Let's work together to create something amazing.</p>
+            <h2 class="text-2xl font-bold mb-2">Get in touch</h2>
+            <div style="width: 40px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+            <p class="text-sm mb-4">Have a project in mind? Let's work together to create something amazing.</p>
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="icon-container">
                         <img src="email_icon.png" alt="Email">
                     </div>
-                    <span>d78629175@gmail.com</span>
+                    <span class="text-sm">d78629175@gmail.com</span>
                 </div>
                 <div class="contact-item">
                     <div class="icon-container">
                         <img src="contact_icon.png" alt="Phone">
                     </div>
-                    <span>+91 9606646371</span>
+                    <span class="text-sm">+91 9606646371</span>
                 </div>
                 <div class="contact-item">
                     <div class="icon-container">
                         <img src="location_icon.png" alt="Location">
                     </div>
-                    <span>Karnataka,India</span>
+                    <span class="text-sm">Karnataka,India</span>
                 </div>
             </div>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/kaushik-d-05b4942b3"><img src="linkedin_icon.png" alt="LinkedIn"></a>
                 <a href="https://drive.google.com/file/d/1ybsfcctjck4d_U7cRQVtEbN5WithZClD/view?usp=drivesdk"><img src="resume.png" alt="Resume"></a>
             </div>
-            <p class="copyright">&copy; 2025 Kaushik. All Rights Reserved.</p>
+            <p class="copyright text-xs">&copy; 2025 Kaushik. All Rights Reserved.</p>
         </div>
     </section>
 
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const sections = document.querySelectorAll(".fade-in");
