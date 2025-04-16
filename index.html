@@ -561,53 +561,100 @@
         }
 
         /* Media Queries for Responsiveness */
-  @media screen and (max-width: 768px) {
-    nav .nav-menu {
-        display: none !important;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #080808;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0; /* Resetting overall padding */
-        flex-direction: column;
-        align-items: center;
-        list-style: none; /* Remove default list styling */
-        margin: 0; /* Remove default list margin */
-        padding: 0; /* Remove default list padding */
-    }
-
-    .nav-menu.active {
-        display: flex !important;
-    }
-
-    .nav-menu li {
-        margin: 10px 0; /* Reduced vertical margin for list items */
-    }
-
-    .nav-menu li a {
-        display: inline-block; /* Revert to inline-block */
-        padding: 10px 15px; /* Add some horizontal and vertical padding to the link */
-        margin: 0;
-        font-size: 1.1em;
-    }
-
-    .nav-menu li a:hover::after,
-    .nav-menu li a.active::after {
-        bottom: -5px; /* Adjust underline position */
-        left: 25%;
-        width: 50%;
-    }
-
+ @media screen and (max-width: 768px) {
     nav {
         padding: 15px;
+        position: sticky; /* Keep the nav bar at the top */
+        top: 0;
+        z-index: 100;
     }
 
     .hamburger {
         display: block;
+        cursor: pointer;
+        padding: 10px;
     }
 
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        display: none !important;
+        position: absolute; /* Absolutely position the menu */
+        top: 60px; /* Adjust based on your nav height */
+        left: 0;
+        background-color: #080808;
+        width: 100%;
+        text-align: center;
+        overflow-y: auto; /* Enable scrolling within the menu if it gets long */
+        max-height: calc(100vh - 60px); /* Limit the menu height to the viewport height minus the nav height */
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0; /* Add some padding to the menu container */
+    }
+
+    .nav-menu li {
+        margin: 15px 0; /* Add vertical margin to list items */
+    }
+
+    .nav-menu li a {
+        display: block; /* Make the whole area clickable */
+        padding: 10px 15px; /* Add padding to the links */
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li a.active {
+        color: #c780eb;
+    }
+
+    .nav-menu li a:hover::after,
+    .nav-menu li a.active::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        width: 0;
+        height: 2px;
+        background-color: #c780eb;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+    }
+
+    .nav-menu li a:hover::after,
+    .nav-menu li a.active::after {
+        width: 50%;
+    }
+
+    /* Rest of your mobile styles for other sections remain largely the same */
     #home {
         padding: 60px 20px;
     }
