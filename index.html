@@ -561,9 +561,40 @@
         }
 
         /* Media Queries for Responsiveness */
-       @media screen and (max-width: 768px) {
+     @media screen and (max-width: 768px) {
     nav .nav-menu {
         display: none !important;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #080808;
+        width: 100%;
+        text-align: center;
+        padding: 30px 0; /* Increased overall padding for the menu container */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu.active {
+        display: flex !important;
+    }
+
+    .nav-menu li { /* Target the list items directly */
+        margin: 20px 0; /* Add vertical margin to the list items */
+    }
+
+    .nav-menu li a { /* Target the links within the list items */
+        display: block; /* Make the entire link area clickable */
+        padding: 15px 0; /* Add vertical padding to the links themselves */
+        margin: 0; /* Reset any potential margin on the 'a' tag */
+        font-size: 1.1em;
+    }
+
+    .nav-menu li a:hover::after,
+    .nav-menu li a.active::after {
+        bottom: -8px;
+        left: 25%; /* Adjust the underline position if needed */
+        width: 50%; /* Adjust the underline width if needed */
     }
 
     nav {
@@ -574,62 +605,35 @@
         display: block;
     }
 
-    .nav-menu {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #080808;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0; /* Increased padding for more menu spacing */
-        display: none; /* Initially hidden on small screens */
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-menu.active {
-        display: flex !important;
-    }
-
-    .nav-menu a {
-        margin: 20px 0; /* Increased vertical margin between links */
-        font-size: 1.1em;
-    }
-
-    .nav-menu a:hover::after,
-    .nav-menu a.active::after {
-        bottom: -8px;
-    }
-
     #home {
-        padding: 60px 20px; /* Increased vertical padding for the whole section */
+        padding: 60px 20px;
     }
 
     #home h1 {
         font-size: 2.5rem;
-        margin-bottom: 15px; /* Added margin below the heading */
+        margin-bottom: 15px;
     }
 
     #home p.mt-3 {
         font-size: 1.1rem;
-        margin-top: 15px; /* Increased margin above the paragraph */
-        margin-bottom: 25px; /* Added margin below the paragraph */
+        margin-top: 15px;
+        margin-bottom: 25px;
     }
 
     #home .mt-5 {
-        margin-top: 30px; /* Increased margin above the button */
+        margin-top: 30px;
     }
 
     #skills {
-        padding: 60px 20px; /* Increased vertical padding */
+        padding: 60px 20px;
     }
 
     #skills h2 {
-        margin-bottom: 20px; /* Increased margin below the heading */
+        margin-bottom: 20px;
     }
 
     #skills p {
-        margin-bottom: 30px; /* Increased margin below the paragraph */
+        margin-bottom: 30px;
     }
 
     #skills .max-w-2xl {
@@ -637,45 +641,45 @@
     }
 
     #skills .mb-4 {
-        margin-bottom: 30px; /* Increased vertical spacing between skill bars */
+        margin-bottom: 30px;
     }
 
     #projects {
-        padding: 60px 20px; /* Increased vertical padding */
+        padding: 60px 20px;
     }
 
     #projects h2 {
-        margin-bottom: 20px; /* Increased margin below the heading */
+        margin-bottom: 20px;
     }
 
     #projects p {
-        margin-bottom: 30px; /* Increased margin below the paragraph */
+        margin-bottom: 30px;
     }
 
     #projects .project-grid {
         grid-template-columns: 1fr;
-        gap: 60px; /* Increased gap between project items */
+        gap: 60px;
     }
 
     .project-item {
-        margin-bottom: 30px; /* Added margin below each project item */
+        margin-bottom: 30px;
     }
 
     .project-item img {
-        max-height: none; /* Allow full height within container */
+        max-height: none;
     }
 
     #about {
-        padding: 60px 20px; /* Increased vertical padding */
+        padding: 60px 20px;
     }
 
     #about h2 {
-        margin-bottom: 20px; /* Increased margin below the heading */
+        margin-bottom: 20px;
     }
 
     #about p {
         line-height: 1.8;
-        margin-bottom: 30px; /* Increased margin below paragraphs */
+        margin-bottom: 30px;
     }
 
     #about .max-w-3xl {
@@ -683,25 +687,25 @@
     }
 
     #contact {
-        padding: 60px 20px; /* Increased vertical padding */
+        padding: 60px 20px;
     }
 
     #contact h2 {
-        margin-bottom: 20px; /* Increased margin below the heading */
+        margin-bottom: 20px;
     }
 
     #contact p {
-        margin-bottom: 30px; /* Increased margin below the introductory paragraph */
+        margin-bottom: 30px;
     }
 
     .contact-info {
         flex-direction: column;
         align-items: flex-start;
-        margin-bottom: 40px; /* Increased margin below contact info */
+        margin-bottom: 40px;
     }
 
     .contact-item {
-        margin: 20px 0; /* Increased vertical margin between contact items */
+        margin: 20px 0;
     }
 
     .social-links {
@@ -709,11 +713,11 @@
     }
 
     .copyright {
-        margin-top: 40px; /* Increased margin above the copyright */
-        padding-bottom: 20px; /* Added padding at the bottom of the contact section */
+        margin-top: 40px;
+        padding-bottom: 20px;
     }
 }
-        }
+ }
     </style>
 </head>
 
