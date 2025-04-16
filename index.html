@@ -1,1008 +1,1361 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Kaushik's Portfolio</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
+
         /* General Styles */
+
         body {
+
             background: linear-gradient(to right, #121018, #0a090c);
+
             color: white;
+
             font-family: 'Poppins', sans-serif;
+
             margin: 0;
+
             line-height: 1.6;
+
         }
+
 
         /* Navigation */
+
         nav {
+
             background-color: #080808;
-            padding: 1rem;
-            text-align: center;
+
+            padding: 10px; /* Reduced padding for mobile */
+
+            text-align: center; /* Center align on mobile */
+
             border-bottom: 1px solid #181818;
+
             position: sticky;
+
             top: 0;
+
             z-index: 100;
+
         }
+
 
         nav ul {
+
             display: flex;
-            justify-content: center;
+
+            justify-content: center; /* Center align nav items */
+
             padding: 0;
-            margin-top: 0.625rem;
+
+            margin: 10px 0 0; /* Adjusted margin */
+
         }
+
 
         nav li {
+
             list-style: none;
-            margin: 0 1rem;
+
+            margin: 0 10px; /* Reduced margin between nav items */
+
         }
+
 
         nav a {
+
             color: white;
+
             text-decoration: none;
+
             transition: color 0.3s ease;
+
             position: relative;
-            font-size: 1rem;
+
+            font-size: 0.9rem; /* Slightly smaller font size for mobile */
+
         }
+
 
         nav a:hover,
+
         nav a.active {
+
             color: #c780eb;
+
             text-decoration: none;
+
         }
 
+
         nav a:hover::after,
+
         nav a.active::after {
+
             content: '';
+
             position: absolute;
-            left: 50%;
-            bottom: -0.3125rem;
-            width: 50%;
-            height: 0.125rem;
+
+            left: 50%; /* Center the underline */
+
+            bottom: -5px;
+
+            width: 50%; /* Shorter underline */
+
+            height: 2px;
+
             background-color: #c780eb;
+
             transform: scaleX(0);
-            transform-origin: center;
+
+            transform-origin: center; /* Center the scaling */
+
             transition: transform 0.3s ease;
+
         }
 
+
         nav a:hover::after,
+
         nav a.active::after {
+
             transform: scaleX(1);
+
         }
+
 
         /* Reusable Styles */
+
         .glow-border {
-            border: 0.1875rem solid #9d4edd;
+
+            border: 3px solid #9d4edd; /* Reduced border width for mobile */
+
             border-radius: 50%;
-            box-shadow: 0 0 0.625rem #9d4edd;
+
+            box-shadow: 0 0 10px #9d4edd; /* Reduced shadow for mobile */
+
         }
+
 
         .btn-primary {
+
             background: #9d4edd;
-            padding: 0.75rem 1.5rem;
-            border-radius: 1.5rem;
+
+            padding: 8px 16px; /* Reduced padding for mobile */
+
+            border-radius: 20px; /* Slightly smaller radius */
+
             transition: 0.3s;
-            font-size: 1rem;
-            display: inline-block;
+
+            font-size: 0.8rem; /* Smaller font size for buttons */
+
         }
+
 
         .btn-primary:hover {
+
             background: #7b2cbf;
+
         }
+
 
         .btn-outline {
-            border: 0.125rem solid #9d4edd;
-            padding: 0.75rem 1.5rem;
-            border-radius: 1.5rem;
+
+            border: 2px solid #9d4edd;
+
+            padding: 8px 16px; /* Reduced padding for mobile */
+
+            border-radius: 20px; /* Slightly smaller radius */
+
             transition: 0.3s;
-            font-size: 1rem;
-            display: inline-block;
+
+            font-size: 0.8rem; /* Smaller font size for buttons */
+
         }
+
 
         .btn-outline:hover {
+
             background: #9d4edd;
+
         }
+
 
         .underline-purple {
+
             display: inline-block;
-            border-bottom: 0.1875rem solid #9d4edd;
-            padding-bottom: 0.1875rem;
+
+            border-bottom: 3px solid #9d4edd; /* Reduced underline thickness */
+
+            padding-bottom: 3px; /* Reduced padding */
+
         }
+
 
         .progress-bar {
-            height: 0.6rem;
-            background-color: #333;
-            border-radius: 0.3rem;
+
+            height: 8px; /* Reduced height for mobile */
+
+            background-color: #ddd;
+
+            border-radius: 4px; /* Reduced radius */
+
             overflow: hidden;
-            margin-top: 0.5rem;
+
+            margin-top: 6px; /* Reduced margin */
+
             position: relative;
+
             width: 100%;
+
         }
+
 
         .progress-fill {
+
             height: 100%;
+
             background-color: #9d4edd;
+
             width: 0;
+
             transition: width 1.5s ease-in-out;
+
         }
+
 
         .progress-text {
+
             position: absolute;
+
             right: 0;
-            top: -1.2rem;
-            font-size: 0.9rem;
-            color: #9d4edd;
+
+            top: -16px; /* Adjusted position */
+
+            font-size: 12px; /* Smaller font size */
+
+            color: purple;
+
             display: none;
+
         }
+
 
         .fade-in {
+
             opacity: 0;
-            transform: translateY(1rem);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+
+            transform: translateY(10px); /* Reduced transform distance */
+
+            transition: opacity 0.8s ease, transform 0.8s ease; /* Slightly faster transition */
+
         }
+
 
         .fade-in.visible {
+
             opacity: 1;
+
             transform: translateY(0);
+
         }
+
 
         .hover-effect:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.3);
+
+            transform: scale(1.01); /* Reduced scale effect */
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow effect */
+
         }
+
 
         /* Section Styles */
+
         section {
-            padding: 2rem 1rem;
+
+            padding: 30px 15px; /* Reduced section padding */
+
         }
+
 
         section:first-of-type {
-            border-bottom: 1px solid #181818;
+
+            border-bottom: 1px solid #181818; /* Thinner border */
+
         }
+
 
         #home {
+
             background-color: #121018;
-            min-height: 70vh;
+
+            min-height: 80vh; /* Reduced height */
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             text-align: center;
+
             border-bottom: none;
+
+            margin-bottom: -75px; /* Reduced margin */
+
         }
+
 
         #home h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
+
+            font-size: 2.5rem; /* Adjusted for prominence */
+
+            margin-bottom: 8px;
+
         }
 
-        #home p.mt-2 {
-            margin-top: 0.75rem;
+
+        #home p.mt-3 {
+
+            margin-top: 8px;
+
             color: #ddd;
-            font-size: 1.1rem;
-            line-height: 1.7;
+
+            font-size: 0.9rem; /* Smaller font size */
+
         }
+
 
         #home .mt-5 {
-            margin-top: 1.5rem;
+
+            margin-top: 20px; /* Reduced button spacing */
+
         }
+
 
         #skills {
+
             background-color: #101010;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
+
+            min-height: 50vh; /* Reduced height */
+
+            margin-top: 80px; /* Reduced spacing */
+
+            margin-bottom: -75px;
+
+            border-bottom: none;
+
             text-align: center;
+
         }
+
 
         #about {
+
+            min-height: 50vh; /* Reduced height */
+
             background-color: #0e0e0e;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
+
+            margin-top: 90px; /* Reduced spacing */
+
+            margin-bottom: -75px;
+
             text-align: center;
+
+            border-bottom: none;
+
         }
+
 
         #projects {
+
+            min-height: 50vh; /* Reduced height */
+
             background-color: #121018;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
+
+            margin-top: 90px; /* Reduced spacing */
+
+            margin-bottom: -75px;
+
             text-align: center;
+
+            border-bottom: none;
+
         }
+
 
         #contact {
+
+            min-height: 20vh; /* Reduced height */
+
             background-color: #101010;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
+
+            margin-top: 90px; /* Reduced spacing */
+
             text-align: center;
+
         }
+
 
         /* Heading Styles */
+
         h2 {
-            font-size: 2.2rem;
-            margin-bottom: 0.75rem;
+
+            font-size: 2em; /* Reduced size */
+
+            margin-bottom: 8px;
+
             color: #c780eb;
+
         }
+
 
         /* Skills Section */
+
         #skills .max-w-2xl {
-            max-width: 90%;
+
+            max-width: 90%; /* Take up more width on mobile */
+
             margin: 0 auto;
+
         }
+
 
         #skills .mb-4 {
-            margin-bottom: 1.2rem;
+
+            margin-bottom: 16px; /* Reduced spacing */
+
         }
+
 
         /* Projects Section */
+
         #projects p {
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
+
+            line-height: 1.4; /* Adjusted line height */
+
+            margin-bottom: 20px;
+
             color: #ddd;
-            font-size: 1.1rem;
+
+            font-size: 0.9rem; /* Smaller font size */
+
         }
+
+
+        #projects .filter-buttons {
+
+            margin-bottom: 15px;
+
+        }
+
+
+        #projects .filter-buttons button {
+
+            background-color: #333;
+
+            color: white;
+
+            padding: 8px 16px; /* Reduced padding */
+
+            border: none;
+
+            border-radius: 20px; /* Reduced radius */
+
+            margin: 4px; /* Reduced margin */
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease;
+
+            font-size: 0.75rem; /* Smaller font size */
+
+        }
+
+
+        #projects .filter-buttons button.active,
+
+        #projects .filter-buttons button:hover {
+
+            background-color: #9d4edd;
+
+        }
+
 
         #projects .project-grid {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 90%;
-            margin: 0 auto;
+
+            grid-template-columns: 1fr; /* Single column on mobile */
+
+            gap: 20px; /* Reduced gap */
+
         }
+
 
         .project-item {
+
             position: relative;
+
             overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease-in-out;
+
         }
 
-        .project-item:hover {
-            transform: translateY(-0.5rem);
-        }
 
         .project-item img {
+
             width: 100%;
+
             height: auto;
-            max-height: 200px;
-            object-fit: cover;
-            border-radius: 0.5rem 0.5rem 0 0;
+
+            max-height: 300px; /* Reduced max height */
+
+            border-radius: 8px; /* Reduced radius */
+
+            transition: transform 0.3s ease;
+
         }
+
+
+        .project-item:hover img {
+
+            transform: scale(1.05); /* Reduced scale effect */
+
+        }
+
 
         .project-item .project-overlay {
+
             position: absolute;
+
             top: 0;
+
             left: 0;
+
             width: 100%;
+
             height: 100%;
+
             background: rgba(0, 0, 0, 0.8);
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
+
             align-items: center;
+
             opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+
+            transition: opacity 0.3s ease;
+
             color: white;
+
             text-align: center;
-            border-radius: 0.5rem;
+
         }
+
 
         .project-item:hover .project-overlay {
+
             opacity: 1;
+
         }
+
 
         .project-item .project-overlay h3 {
-            margin-bottom: 0.3rem;
-            font-size: 1.3rem;
+
+            margin-bottom: 3px; /* Reduced margin */
+
+            font-size: 1.2em; /* Reduced font size */
+
         }
+
 
         .project-item .project-overlay p {
-            font-size: 1rem;
-            padding: 0 1rem;
-            line-height: 1.4;
+
+            font-size: 0.9em; /* Reduced font size */
+
         }
+
+
+        #projects,
+
+        #about {
+
+            position: relative;
+
+        }
+
+
+        #projects::after {
+
+            content: '';
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 1px; /* Thinner line */
+
+            background: linear-gradient(to bottom, transparent, #0e0e0e);
+
+        }
+
+
+        .blog-preview {
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .blog-preview img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+        }
+
+
+        .blog-preview-content {
+
+            position: absolute;
+
+            bottom: 0;
+
+            right: 0;
+
+            background: rgba(0, 0, 0, 0.7);
+
+            color: white;
+
+            padding: 8px; /* Reduced padding */
+
+            text-align: right;
+
+        }
+
+
+        .blog-preview-title {
+
+            font-size: 1em; /* Reduced font size */
+
+            font-weight: bold;
+
+            margin-bottom: 3px; /* Reduced margin */
+
+        }
+
+
+        .blog-preview-subtitle {
+
+            font-size: 0.8em; /* Reduced font size */
+
+        }
+
+
+        #projects .project-item:first-child img,
+
+        #projects .project-item:nth-child(2) img {
+
+            width: 100%;
+
+            height: auto;
+
+            max-height: 300px; /* Reduced max height */
+
+            border-radius: 8px; /* Reduced radius */
+
+        }
+
+
+        #projects .project-item:first-child .project-overlay,
+
+        #projects .project-item:nth-child(2) .project-overlay {
+
+            justify-content: flex-end;
+
+            align-items: flex-end;
+
+            padding: 10px; /* Reduced padding */
+
+            text-align: right;
+
+            color: white;
+
+        }
+
+
+        #projects .project-item:first-child .project-overlay h3 {
+
+            margin-bottom: 0;
+
+        }
+
 
         /* About Section */
+
         #about .max-w-3xl {
-            max-width: 90%;
+
+            max-width: 90%; /* Take up more width on mobile */
+
             margin: 0 auto;
+
         }
 
-        #about p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #ddd;
-            margin-bottom: 1rem;
-        }
 
         /* Contact Section */
+
         #contact .max-w-3xl {
-            max-width: 90%;
+
+            max-width: 90%; /* Take up more width on mobile */
+
             margin: 0 auto;
+
         }
+
 
         .contact-info {
+
             display: flex;
-            flex-direction: column;
+
+            flex-direction: column; /* Stack contact items vertically */
+
             align-items: center;
-            margin-bottom: 1.5rem;
-            gap: 1rem;
+
+            margin-bottom: 20px;
+
         }
+
 
         .contact-item {
+
             display: flex;
+
             align-items: center;
+
+            margin: 8px 0; /* Reduced vertical margin */
+
             color: #9d4edd;
+
             cursor: pointer;
+
         }
+
 
         .contact-item .icon-container {
-            width: 2rem;
-            height: 2rem;
+
+            width: 30px; /* Reduced size */
+
+            height: 30px; /* Reduced size */
+
             border-radius: 50%;
+
             background-color: #333;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
-            margin-right: 0.75rem;
+
+            margin-right: 8px; /* Reduced margin */
+
             transition: background-color 0.3s ease;
+
         }
+
 
         .contact-item:hover .icon-container {
+
             background-color: #9d4edd;
+
         }
+
 
         .contact-item img {
-            width: 1.2rem;
-            height: 1.2rem;
+
+            width: 16px; /* Reduced size */
+
+            height: 16px; /* Reduced size */
+
             filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(248deg) brightness(95%) contrast(93%);
+
             transition: filter 0.3s ease;
+
         }
+
 
         .contact-item:hover img {
+
             filter: invert(100%);
+
         }
+
 
         .social-links {
+
             display: flex;
+
             justify-content: center;
-            margin-top: 1.5rem;
+
+            margin-top: 20px;
+
         }
+
 
         .social-links a {
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
-            width: 2rem;
-            height: 2rem;
+
+            width: 30px; /* Reduced size */
+
+            height: 30px; /* Reduced size */
+
             border-radius: 50%;
+
             background-color: #333;
-            margin: 0 0.75rem;
+
+            margin: 0 8px; /* Reduced margin */
+
             transition: background-color 0.3s ease;
+
         }
+
 
         .social-links a:hover {
+
             background-color: #9d4edd;
+
         }
+
 
         .social-links img {
-            width: 1.2rem;
-            height: 1.2rem;
+
+            width: 16px; /* Reduced size */
+
+            height: 16px; /* Reduced size */
+
             filter: invert(100%);
+
             transition: filter 0.3s ease;
+
         }
+
 
         .social-links a:hover img {
+
             filter: invert(100%);
+
         }
+
 
         .copyright {
-            margin-top: 2rem;
-            font-size: 0.8em;
+
+            margin-top: 30px;
+
+            font-size: 0.7em;
+
             color: #aaa;
+
         }
 
-        /* Media Queries for Responsiveness */
 
-        /* Small screens (phones) */
-        @media (max-width: 640px) {
-            nav {
-                padding: 0.75rem;
-            }
+        /* Removed gradient changes for sections (as per request) */
 
-            nav ul {
-                margin-top: 0.5rem;
-            }
+        #home::after,
 
-            nav li {
-                margin: 0 0.75rem;
-            }
+        #skills::after,
 
-            nav a {
-                font-size: 0.9rem;
-            }
+        #about::after,
 
-            #home {
-                min-height: auto;
-                padding: 3rem 1.5rem;
-            }
+        #projects::after,
 
-            #home h1 {
-                font-size: 2.2rem;
-                margin-bottom: 0.5rem;
-            }
+        #contact::after {
 
-            #home p.mt-2 {
-                font-size: 1rem;
-            }
+            content: '';
 
-            .btn-primary,
-            .btn-outline {
-                padding: 0.6rem 1.2rem;
-                border-radius: 1.2rem;
-                font-size: 0.9rem;
-            }
+            position: absolute;
 
-            h2 {
-                font-size: 1.8rem;
-            }
+            bottom: 0;
 
-            section {
-                padding: 2rem 1.5rem;
-            }
+            left: 0;
 
-            #skills .max-w-2xl {
-                max-width: 95%;
-            }
+            width: 100%;
 
-            #projects .project-grid {
-                grid-template-columns: 1fr;
-            }
+            height: 0;
 
-            .project-item img {
-                max-height: 250px;
-            }
+            background: transparent;
 
-            .project-item .project-overlay h3 {
-                font-size: 1.1rem;
-            }
-
-            .project-item .project-overlay p {
-                font-size: 0.9rem;
-                padding: 0 0.8rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .contact-item .icon-container {
-                margin-right: 0;
-                margin-bottom: 0.5rem;
-            }
-
-            .contact-item span {
-                font-size: 0.9rem;
-            }
-
-            .social-links {
-                margin-top: 1.2rem;
-            }
-
-            .social-links a {
-                width: 1.8rem;
-                height: 1.8rem;
-                margin: 0 0.5rem;
-            }
-
-            .social-links img {
-                width: 1rem;
-                height: 1rem;
-            }
-
-            .copyright {
-                font-size: 0.7em;
-            }
         }
 
-        /* Medium screens (tablets) */
-        @media (min-width: 641px) and (max-width: 1024px) {
-            nav {
-                padding: 1rem;
-            }
-
-            nav ul {
-                margin-top: 0.75rem;
-            }
-
-            nav li {
-                margin: 0 1rem;
-            }
-
-            nav a {
-                font-size: 1rem;
-            }
-
-            #home {
-                min-height: auto;
-                padding: 4rem 2rem;
-            }
-
-            #home h1 {
-                font-size: 2.8rem;
-                margin-bottom: 0.6rem;
-            }
-
-            #home p.mt-2 {
-                font-size: 1.2rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 3rem 2rem;
-            }
-
-            #skills .max-w-2xl {
-                max-width: 85%;
-            }
-
-            #projects .project-grid {
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 2rem;
-            }
-
-            .project-item img {
-                max-height: 280px;
-            }
-
-            .project.project-item .project-overlay h3 {
-                font-size: 1.2rem;
-            }
-
-            .project-item .project-overlay p {
-                font-size: 1rem;
-            }
-
-            .contact-info {
-                flex-direction: row;
-                justify-content: center;
-                gap: 2rem;
-                flex-wrap: wrap;
-            }
-
-            .contact-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .contact-item .icon-container {
-                margin-right: 0;
-                margin-bottom: 0.6rem;
-            }
-
-            .contact-item span {
-                font-size: 1rem;
-            }
-
-            .social-links {
-                margin-top: 1.5rem;
-            }
-
-            .social-links a {
-                width: 2rem;
-                height: 2rem;
-                margin: 0 0.6rem;
-            }
-
-            .social-links img {
-                width: 1.1rem;
-                height: 1.1rem;
-            }
-
-            .copyright {
-                font-size: 0.75em;
-            }
-        }
-
-        /* Large screens (laptops and desktops) */
-        @media (min-width: 1025px) {
-            nav {
-                padding: 1.2rem 2rem;
-                text-align: left;
-            }
-
-            nav ul {
-                justify-content: flex-end;
-                margin-top: 0;
-            }
-
-            nav li {
-                margin: 0 1.5rem;
-            }
-
-            nav a {
-                font-size: 1.1rem;
-            }
-
-            #home {
-                min-height: 75vh;
-                padding: 5rem 3rem;
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-            }
-
-            #home .text-center {
-                text-align: left;
-            }
-
-            #home h1 {
-                font-size: 3rem;
-                margin-bottom: 1rem;
-            }
-
-            #home p.mt-2 {
-                font-size: 1.3rem;
-            }
-
-            section {
-                padding: 4rem 3rem;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-            }
-
-            #skills {
-                text-align: left;
-            }
-
-            #skills .text-center {
-                text-align: left;
-            }
-
-            #skills .max-w-2xl {
-                max-width: 70%;
-            }
-
-            #projects {
-                text-align: left;
-            }
-
-            #projects .text-center {
-                text-align: left;
-            }
-
-            #projects .project-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 2.5rem;
-                max-width: 95%;
-                margin: 0 auto;
-            }
-
-            .project-item img {
-                max-height: 300px;
-            }
-
-            .project-item .project-overlay h3 {
-                font-size: 1.4rem;
-            }
-
-            .project-item .project-overlay p {
-                font-size: 1.1rem;
-            }
-
-            #about {
-                text-align: left;
-            }
-
-            #about .text-center {
-                text-align: left;
-            }
-
-            #about .max-w-3xl {
-                max-width: 80%;
-            }
-
-            #about p {
-                font-size: 1.2rem;
-            }
-
-            #contact {
-                text-align: center;
-            }
-
-            #contact .text-center {
-                text-align: center;
-            }
-
-            .contact-info {
-                flex-direction: row;
-                justify-content: center;
-                gap: 3rem;
-            }
-
-            .contact-item {
-                align-items: flex-start;
-                text-align: left;
-            }
-
-            .contact-item .icon-container {
-                margin-right: 1rem;
-                margin-bottom: 0;
-            }
-
-            .contact-item span {
-                font-size: 1.1rem;
-            }
-
-            .social-links {
-                margin-top: 2rem;
-            }
-
-            .social-links a {
-                width: 2.2rem;
-                height: 2.2rem;
-                margin: 0 0.8rem;
-            }
-
-            .social-links img {
-                width: 1.3rem;
-                height: 1.3rem;
-            }
-
-            .copyright {
-                font-size: 0.9em;
-            }
-        }
     </style>
+
 </head>
 
+
 <body>
+
     <nav class="p-2 flex justify-between items-center text-white">
+
         <div class="text-xl font-bold text-purple-400">
+
             PORTFOLIO
+
         </div>
+
         <ul class="flex space-x-4">
-            <li><a href="#" id="home-nav" class="active">Home</a></li>
-            <li><a href="#skills" id="skills-nav">Skills</a></li>
-            <li><a href="#about" id="about-nav">About</a></li>
-            <li><a href="#projects" id="projects-nav">Projects</a></li>
+
+            <li><a href="#" id="home-nav">Home</a></li>
+
+            <li><a href="#" id="skills-nav">Skills</a></li>
+
+            <li><a href="#" id="about-nav">About</a></li>
+
+            <li><a href="#" id="projects-nav">Projects</a></li>
+
         </ul>
+
     </nav>
 
+
     <section id="home" class="flex justify-center items-center min-h-screen">
-        <div class="text-center md:text-left">
+
+        <div class="text-center">
+
             <h1 class="text-3xl font-bold">Hi, I'm <span class="text-purple-400 underline-purple">Kaushik</span>
+
             </h1>
+
             <p class="mt-2 text-lg text-gray-300">A passionate software developer.</p>
+
             <p class="mt-2 text-sm text-gray-400">I specialize in building dynamic websites using Django and
+
                 continuously explore new technologies to optimize performance and user experience.</p>
+
             <div class="mt-4">
-                <a href="#contact" class="btn-outline">Contact Me</a>
+
+                <button class="btn-outline">Contact Me</button>
+
             </div>
+
         </div>
+
     </section>
 
+
     <section id="skills" class="w-full text-white p-6 text-center fade-in rounded-lg hover-effect">
+
         <h2 class="text-2xl font-bold mb-2">SKILLS</h2>
+
         <div style="width: 40px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+
         <p class="text-gray-400 mb-4">My professional expertise and technical proficiency</p>
+
         <div class="max-w-2xl mx-auto">
+
             <div class="mb-3">
+
                 <span class="block text-left text-sm">Python</span>
+
                 <span class="progress-text">75%</span>
+
                 <div class="progress-bar">
+
                     <div class="progress-fill" data-progress="75%"></div>
+
                 </div>
+
             </div>
+
             <div class="mb-3">
+
                 <span class="block text-left text-sm">Django</span>
+
                 <span class="progress-text">60%</span>
+
                 <div class="progress-bar">
+
                     <div class="progress-fill" data-progress="60%"></div>
+
                 </div>
+
             </div>
+
             <div class="mb-3">
+
                 <span class="block text-left text-sm">JavaScript</span>
+
                 <span class="progress-text">65%</span>
+
                 <div class="progress-bar">
+
                     <div class="progress-fill" data-progress="65%"></div>
+
                 </div>
+
             </div>
+
             <div class="mb-3">
+
                 <span class="block text-left text-sm">HTML & CSS</span>
+
                 <span class="progress-text">90%</span>
+
                 <div class="progress-bar">
+
                     <div class="progress-fill" data-progress="90%"></div>
+
                 </div>
+
             </div>
+
             <div class="mb-3">
+
                 <span class="block text-left text-sm">MySQL</span>
+
                 <span class="progress-text">80%</span>
+
                 <div class="progress-bar">
+
                     <div class="progress-fill" data-progress="80%"></div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
 
 
     <section id="projects" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
-        <div class="max-w-5xl mx-auto text-center">
+
+        <div class="max-w-5xl mx-auto">
+
             <h2 class="text-2xl font-bold mb-2">PORTFOLIO</h2>
+
             <div style="width: 30px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+
             <p class="text-gray-400 mb-4 text-sm">Selected projects showcasing my creative work</p>
+
             <div class="project-grid">
+
                 <div class="project-item">
+
                     <a href="https://github.com/Aspergilleshumania/BlogSphere" target="_blank" style="display: block;">
-                        <img src="BlogSphere.png" alt="BlogSphere">
+
+                        <img src="BlogSphere.png" alt="BlogSphere" style="max-height: 200px; width: 100%; object-fit: cover;">
+
                         <div class="project-overlay">
+
                             <h3>BlogSphere</h3>
+
                             <p class="text-sm">Full Stack Website using Django Framework</p>
+
                         </div>
+
                     </a>
+
                 </div>
+
                 <div class="project-item">
+
                     <a href="https://github.com/rahulp0817/automation-workflow" target="_blank" style="display: block;">
-                        <img src="CogniTask.png" alt="CogniTask">
+
+                        <img src="CogniTask.png" alt="CogniTask" style="max-height: 200px; width: 100%; object-fit: cover;">
+
                         <div class="project-overlay">
+
                             <h3>CogniTask</h3>
+
                             <p class="text-sm">Automation Platform</p>
+
                         </div>
+
                     </a>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
 
 
     <section id="about" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
+
         <div class="max-w-3xl mx-auto text-center">
+
             <h2 class="text-2xl font-bold mb-3">ABOUT ME</h2>
+
             <div style="width: 40px; height: 3px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099)"></div>
-            <p class="mb-4 text-lg text-gray-300" style="line-height: 1.6; font-size: 1rem;">
+
+            <p class="mb-4 text-lg text-gray-300" style="line-height: 1.6; font-size: 0.9rem;">
+
                 I am a dedicated and skilled individual with a growing expertise in software development,
+
                 particularly in Python and the Django Framework. I am passionate about crafting efficient,
+
                 user-friendly, and dynamic web applications. I possess a strong foundation in database
+
                 management, networking principles, and operating systems, which allows me to approach
+
                 development with a holistic understanding of the technology stack.
+
             </p>
 
-            <p class="text-lg text-gray-300" style="line-height: 1.6; font-size: 1rem;">
+
+            <p class="text-lg text-gray-300" style="line-height: 1.6; font-size: 0.9rem;">
+
                 My focus is on building responsive and engaging websites using the Django Framework. I strive to
+
                 create solutions that are not only functional but also deliver a unique and seamless user
+
                 experience. I am eager to apply my technical abilities and contribute to challenging projects
+
                 where I can continue to learn and grow as a software developer.
+
             </p>
+
         </div>
+
     </section>
+
 
 
     <section id="contact" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
-        <div class="max-w-3xl mx-auto text-center">
+
+        <div class="max-w-3xl mx-auto">
+
             <h2 class="text-2xl font-bold mb-2">Get in touch</h2>
+
             <div style="width: 40px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+
             <p class="text-sm mb-4">Have a project in mind? Let's work together to create something amazing.</p>
+
             <div class="contact-info">
+
                 <div class="contact-item">
+
                     <div class="icon-container">
+
                         <img src="email_icon.png" alt="Email">
+
                     </div>
+
                     <span class="text-sm">d78629175@gmail.com</span>
+
                 </div>
+
                 <div class="contact-item">
+
                     <div class="icon-container">
+
                         <img src="contact_icon.png" alt="Phone">
+
                     </div>
+
                     <span class="text-sm">+91 9606646371</span>
+
                 </div>
+
                 <div class="contact-item">
+
                     <div class="icon-container">
+
                         <img src="location_icon.png" alt="Location">
+
                     </div>
+
                     <span class="text-sm">Karnataka,India</span>
+
                 </div>
+
             </div>
+
             <div class="social-links">
+
                 <a href="https://www.linkedin.com/in/kaushik-d-05b4942b3"><img src="linkedin_icon.png" alt="LinkedIn"></a>
+
                 <a href="https://drive.google.com/file/d/1ybsfcctjck4d_U7cRQVtEbN5WithZClD/view?usp=drivesdk"><img src="resume.png" alt="Resume"></a>
+
             </div>
+
             <p class="copyright text-xs">&copy; 2025 Kaushik. All Rights Reserved.</p>
+
         </div>
+
     </section>
 
 
+
     <script>
+
         document.addEventListener("DOMContentLoaded", function () {
+
             const sections = document.querySelectorAll(".fade-in");
+
             const observer = new IntersectionObserver(entries => {
+
                 entries.forEach(entry => {
+
                     if (entry.isIntersecting) {
+
                         entry.target.classList.add("visible");
+
                         entry.target.querySelectorAll(".progress-fill").forEach(bar => {
+
                             bar.style.width = bar.getAttribute("data-progress");
+
                         });
+
                     }
+
                 });
+
             }, { threshold: 0.3 });
 
+
             sections.forEach(section => observer.observe(section));
+
         });
+
 
         document.addEventListener("DOMContentLoaded", function () {
-            const navLinks = document.querySelectorAll("nav a");
-
-            navLinks.forEach(link => {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute("href").substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: "smooth" });
-
-                        navLinks.forEach(navLink => navLink.classList.remove("active"));
-                        this.classList.add("active");
-                    } else if (targetId === "") {
-                        document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-                        navLinks.forEach(navLink => navLink.classList.remove("active"));
-                        document.getElementById("home-nav").classList.add("active");
-                    }
-                });
-            });
-
-            function updateActiveNavLink() {
-                const scrollY = window.scrollY;
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute("id");
-
-                    if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight - sectionHeight / 3) {
-                        navLinks.forEach(link => link.classList.remove("active"));
-                        const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-                        if (activeLink) {
-                            activeLink.classList.add("active");
-                        } else if (sectionId === "home" && scrollY < document.getElementById("skills").offsetTop - document.getElementById("skills").offsetHeight / 3) {
-                            document.getElementById("home-nav").classList.add("active");
-                        }
-                    } else if (scrollY === 0) {
-                        navLinks.forEach(link => link.classList.remove("active"));
-                        document.getElementById("home-nav").classList.add("active");
-                    }
-                });
-            }
 
             const sections = document.querySelectorAll("section");
-            window.addEventListener("scroll", updateActiveNavLink);
-            updateActiveNavLink(); // Call on load to set initial active state
 
-            const contactMeButton = document.querySelector("#home .btn-outline");
-            if (contactMeButton) {
-                contactMeButton.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    const contactSection = document.getElementById("contact");
-                    if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: "smooth" });
+            const navLinks = document.querySelectorAll("nav a");
+
+            const contactItems = document.querySelectorAll(".contact-item");
+
+            const contactIcons = document.querySelectorAll(".contact-item img");
+
+
+            function handleScroll() {
+
+                let currentSection = "";
+
+
+                sections.forEach(section => {
+
+                    const sectionTop = section.offsetTop;
+
+                    const sectionHeight = section.clientHeight;
+
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+
+                        currentSection = section.getAttribute("id");
+
                     }
+
                 });
+
+
+                navLinks.forEach(link => {
+
+                    link.classList.remove("active");
+
+                    if (link.getAttribute("id") === currentSection + "-nav") {
+
+                        link.classList.add("active");
+
+                    }
+
+                });
+
             }
+
+
+            window.addEventListener("scroll", handleScroll);
+
+            handleScroll();
+
+
+            navLinks.forEach(link => {
+
+                link.addEventListener("mouseover", () => {
+
+                    navLinks.forEach(l => l.classList.remove("active"));
+
+                    link.classList.add("active");
+
+                });
+
+            });
+
+
+            contactItems.forEach((item, index) => {
+
+                item.addEventListener("click", () => {
+
+                    contactIcons.forEach(icon => icon.classList.remove("clicked"));
+
+                    contactIcons[index].classList.add("clicked");
+
+                });
+
+            });
+
+
+            const contactMeButton = document.querySelector(".btn-outline");
+
+            if (contactMeButton) {
+
+                contactMeButton.addEventListener("click", function (event) {
+
+                    event.preventDefault();
+
+                    const contactSection = document.getElementById("contact");
+
+                    if (contactSection) {
+
+                        contactSection.scrollIntoView({ behavior: "smooth" });
+
+                    }
+
+                });
+
+            }
+
         });
+
     </script>
+
 </body>
 
-</html>
+
+</html> 
