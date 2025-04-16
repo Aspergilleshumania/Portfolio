@@ -947,22 +947,26 @@
 
             sections.forEach(section => observer.observe(section));
 
-            const hamburger = document.querySelector(".hamburger");
-            const navMenu = document.querySelector(".nav-menu");
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const body = document.body;
 
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            });
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        body.classList.toggle("menu-open"); // Toggle the 'menu-open' class on the body
+    });
 
-            const navLinks = document.querySelectorAll(".nav-menu a");
+    const navLinks = document.querySelectorAll(".nav-menu a");
 
-            navLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    hamburger.classList.remove("active");
-                    navMenu.classList.remove("active");
-                });
-            });
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            body.classList.remove("menu-open"); // Remove the class when a link is clicked
+        });
+    });
+
 
             const sectionsScroll = document.querySelectorAll("section");
             const navLinksScroll = document.querySelectorAll(".nav-menu a, nav a[href^='#']");
