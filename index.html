@@ -563,8 +563,8 @@
     /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
     nav {
-        padding: 15px;
-        position: fixed; /* Use fixed positioning for the nav bar */
+        padding: 12px; /* Further reduced nav padding */
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -572,67 +572,57 @@
     }
 
     .hamburger {
-        display: block;
-        cursor: pointer;
-        padding: 10px;
+        padding: 8px; /* Further reduced hamburger padding */
     }
 
     .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background-color: white;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
+        width: 22px; /* Slightly smaller bars */
+        height: 2px; /* Thinner bars */
+        margin: 4px auto; /* Reduced margin between bars */
     }
 
     .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(6px) rotate(45deg); /* Adjusted transform */
     }
 
     .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-6px) rotate(-45deg); /* Adjusted transform */
     }
 
     .nav-menu {
         display: none !important;
-        position: fixed; /* Absolutely position the menu */
-        top: 60px; /* Adjust based on your nav height */
+        position: fixed;
+        top: 55px; /* Adjusted top based on reduced nav height */
         left: 0;
         background-color: #080808;
         width: 100%;
         text-align: center;
-        overflow-y: auto; /* Enable scrolling within the menu if it gets long */
-        max-height: calc(100vh - 60px); /* Limit the menu height */
+        overflow-y: auto;
+        max-height: calc(100vh - 55px); /* Adjusted max-height */
         list-style: none;
         margin: 0;
-        padding: 10px 0; /* Reduced top and bottom padding */
-        z-index: 99; /* Ensure it's below the nav */
+        padding: 8px 0; /* Further reduced menu container padding */
+        z-index: 99;
     }
 
     .nav-menu.active {
         display: flex !important;
         flex-direction: column;
         align-items: center;
-        padding: 10px 0; /* Reduced top and bottom padding when active */
+        padding: 8px 0; /* Further reduced active menu padding */
     }
 
     .nav-menu li {
-        margin: 10px 0; /* Reduced vertical margin for list items */
+        margin: 8px 0; /* Further reduced vertical list item margin */
     }
 
     .nav-menu li a {
-        display: block; /* Make the whole area clickable */
-        padding: 8px 15px; /* Reduced vertical padding for links */
+        display: block;
+        padding: 6px 12px; /* Further reduced link padding */
         color: white;
         text-decoration: none;
         transition: color 0.3s ease;
-        font-size: 1em; /* Slightly reduce font size if needed */
+        font-size: 0.95em; /* Slightly smaller font size */
     }
 
     .nav-menu li a:hover,
@@ -642,47 +632,34 @@
 
     .nav-menu li a:hover::after,
     .nav-menu li a.active::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 3px; /* Adjust underline position */
-        width: 0;
-        height: 2px;
-        background-color: #c780eb;
-        transform: translateX(-50%);
-        transition: width 0.3s ease;
-    }
-
-    .nav-menu li a:hover::after,
-    .nav-menu li a.active::after {
-        width: 50%;
+        bottom: 2px; /* Further adjusted underline position */
+        height: 1.5px; /* Thinner underline */
     }
 
     body.menu-open {
-        padding-top: 60px; /* Add padding to the body to push content down */
+        padding-top: 55px; /* Adjusted body padding-top */
     }
 
-    /* Rest of your mobile styles for other sections */
+    /* Adjust padding for other sections */
     #home {
-        padding-top: 60px;
-        padding-bottom: 60px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-top: 55px;
+        padding-bottom: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     #skills,
     #about,
     #projects,
     #contact {
-        padding-top: 60px;
-        padding-bottom: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-top: 55px;
+        padding-bottom: 35px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     #projects .project-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px; /* Slightly reduced grid gap */
     }
 }
 </style>
