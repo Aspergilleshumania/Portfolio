@@ -561,7 +561,7 @@
         }
 
         /* Media Queries for Responsiveness */
-     @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     nav .nav-menu {
         display: none !important;
         position: absolute;
@@ -570,31 +570,34 @@
         background-color: #080808;
         width: 100%;
         text-align: center;
-        padding: 30px 0; /* Increased overall padding for the menu container */
+        padding: 20px 0; /* Resetting overall padding */
         flex-direction: column;
         align-items: center;
+        list-style: none; /* Remove default list styling */
+        margin: 0; /* Remove default list margin */
+        padding: 0; /* Remove default list padding */
     }
 
     .nav-menu.active {
         display: flex !important;
     }
 
-    .nav-menu li { /* Target the list items directly */
-        margin: 20px 0; /* Add vertical margin to the list items */
+    .nav-menu li {
+        margin: 10px 0; /* Reduced vertical margin for list items */
     }
 
-    .nav-menu li a { /* Target the links within the list items */
-        display: block; /* Make the entire link area clickable */
-        padding: 15px 0; /* Add vertical padding to the links themselves */
-        margin: 0; /* Reset any potential margin on the 'a' tag */
+    .nav-menu li a {
+        display: inline-block; /* Revert to inline-block */
+        padding: 10px 15px; /* Add some horizontal and vertical padding to the link */
+        margin: 0;
         font-size: 1.1em;
     }
 
     .nav-menu li a:hover::after,
     .nav-menu li a.active::after {
-        bottom: -8px;
-        left: 25%; /* Adjust the underline position if needed */
-        width: 50%; /* Adjust the underline width if needed */
+        bottom: -5px; /* Adjust underline position */
+        left: 25%;
+        width: 50%;
     }
 
     nav {
