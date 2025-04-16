@@ -561,86 +561,158 @@
         }
 
         /* Media Queries for Responsiveness */
-        @media screen and (max-width: 768px) {
-            nav .nav-menu {
-                display: none !important;
-            }
+       @media screen and (max-width: 768px) {
+    nav .nav-menu {
+        display: none !important;
+    }
 
-            nav {
-                padding: 15px;
-            }
+    nav {
+        padding: 15px;
+    }
 
-            .hamburger {
-                display: block;
-            }
+    .hamburger {
+        display: block;
+    }
 
-            .nav-menu {
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: #080808;
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
-                display: none; /* Initially hidden on small screens */
-                flex-direction: column;
-                align-items: center;
-            }
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #080808;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0; /* Increased padding for more menu spacing */
+        display: none; /* Initially hidden on small screens */
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .nav-menu.active {
-                display: flex !important;
-            }
+    .nav-menu.active {
+        display: flex !important;
+    }
 
-            .nav-menu a {
-                margin: 15px 0;
-                font-size: 1.1em;
-            }
+    .nav-menu a {
+        margin: 20px 0; /* Increased vertical margin between links */
+        font-size: 1.1em;
+    }
 
-            .nav-menu a:hover::after,
-            .nav-menu a.active::after {
-                bottom: -8px;
-            }
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+        bottom: -8px;
+    }
 
-            #home h1 {
-                font-size: 2.5rem;
-            }
+    #home {
+        padding: 60px 20px; /* Increased vertical padding for the whole section */
+    }
 
-            #home p.mt-3 {
-                font-size: 1.1rem;
-            }
+    #home h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px; /* Added margin below the heading */
+    }
 
-            #skills .max-w-2xl {
-                padding: 0 20px;
-            }
+    #home p.mt-3 {
+        font-size: 1.1rem;
+        margin-top: 15px; /* Increased margin above the paragraph */
+        margin-bottom: 25px; /* Added margin below the paragraph */
+    }
 
-            #projects .project-grid {
-                grid-template-columns: 1fr;
-            }
+    #home .mt-5 {
+        margin-top: 30px; /* Increased margin above the button */
+    }
 
-            .project-item img {
-                max-height: none; /* Allow full height within container */
-            }
+    #skills {
+        padding: 60px 20px; /* Increased vertical padding */
+    }
 
-            #about .max-w-3xl {
-                padding: 0 20px;
-            }
+    #skills h2 {
+        margin-bottom: 20px; /* Increased margin below the heading */
+    }
 
-            #contact .max-w-3xl {
-                padding: 0 20px;
-            }
+    #skills p {
+        margin-bottom: 30px; /* Increased margin below the paragraph */
+    }
 
-            .contact-info {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    #skills .max-w-2xl {
+        padding: 0 20px;
+    }
 
-            .contact-item {
-                margin: 10px 0;
-            }
+    #skills .mb-4 {
+        margin-bottom: 30px; /* Increased vertical spacing between skill bars */
+    }
 
-            .social-links {
-                margin-top: 20px;
-            }
+    #projects {
+        padding: 60px 20px; /* Increased vertical padding */
+    }
+
+    #projects h2 {
+        margin-bottom: 20px; /* Increased margin below the heading */
+    }
+
+    #projects p {
+        margin-bottom: 30px; /* Increased margin below the paragraph */
+    }
+
+    #projects .project-grid {
+        grid-template-columns: 1fr;
+        gap: 60px; /* Increased gap between project items */
+    }
+
+    .project-item {
+        margin-bottom: 30px; /* Added margin below each project item */
+    }
+
+    .project-item img {
+        max-height: none; /* Allow full height within container */
+    }
+
+    #about {
+        padding: 60px 20px; /* Increased vertical padding */
+    }
+
+    #about h2 {
+        margin-bottom: 20px; /* Increased margin below the heading */
+    }
+
+    #about p {
+        line-height: 1.8;
+        margin-bottom: 30px; /* Increased margin below paragraphs */
+    }
+
+    #about .max-w-3xl {
+        padding: 0 20px;
+    }
+
+    #contact {
+        padding: 60px 20px; /* Increased vertical padding */
+    }
+
+    #contact h2 {
+        margin-bottom: 20px; /* Increased margin below the heading */
+    }
+
+    #contact p {
+        margin-bottom: 30px; /* Increased margin below the introductory paragraph */
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 40px; /* Increased margin below contact info */
+    }
+
+    .contact-item {
+        margin: 20px 0; /* Increased vertical margin between contact items */
+    }
+
+    .social-links {
+        margin-top: 30px;
+    }
+
+    .copyright {
+        margin-top: 40px; /* Increased margin above the copyright */
+        padding-bottom: 20px; /* Added padding at the bottom of the contact section */
+    }
+}
         }
     </style>
 </head>
