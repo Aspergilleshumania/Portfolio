@@ -27,7 +27,7 @@
 
             margin: 0;
 
-            line-height: 1.6;
+            line-height: 1.6; /* Improved readability */
 
         }
 
@@ -38,9 +38,9 @@
 
             background-color: #080808;
 
-            padding: 10px; /* Reduced padding for mobile */
+            padding: 20px;
 
-            text-align: center; /* Center align on mobile */
+            text-align: right;
 
             border-bottom: 1px solid #181818;
 
@@ -53,39 +53,17 @@
         }
 
 
-        nav ul {
-
-            display: flex;
-
-            justify-content: center; /* Center align nav items */
-
-            padding: 0;
-
-            margin: 10px 0 0; /* Adjusted margin */
-
-        }
-
-
-        nav li {
-
-            list-style: none;
-
-            margin: 0 10px; /* Reduced margin between nav items */
-
-        }
-
-
         nav a {
 
             color: white;
 
             text-decoration: none;
 
+            margin-left: 20px;
+
             transition: color 0.3s ease;
 
             position: relative;
-
-            font-size: 0.9rem; /* Slightly smaller font size for mobile */
 
         }
 
@@ -109,11 +87,11 @@
 
             position: absolute;
 
-            left: 50%; /* Center the underline */
+            left: 0;
 
             bottom: -5px;
 
-            width: 50%; /* Shorter underline */
+            width: 100%;
 
             height: 2px;
 
@@ -121,7 +99,7 @@
 
             transform: scaleX(0);
 
-            transform-origin: center; /* Center the scaling */
+            transform-origin: left;
 
             transition: transform 0.3s ease;
 
@@ -141,11 +119,11 @@
 
         .glow-border {
 
-            border: 3px solid #9d4edd; /* Reduced border width for mobile */
+            border: 5px solid #9d4edd;
 
             border-radius: 50%;
 
-            box-shadow: 0 0 10px #9d4edd; /* Reduced shadow for mobile */
+            box-shadow: 0 0 15px #9d4edd;
 
         }
 
@@ -154,13 +132,11 @@
 
             background: #9d4edd;
 
-            padding: 8px 16px; /* Reduced padding for mobile */
+            padding: 10px 20px;
 
-            border-radius: 20px; /* Slightly smaller radius */
+            border-radius: 25px;
 
             transition: 0.3s;
-
-            font-size: 0.8rem; /* Smaller font size for buttons */
 
         }
 
@@ -176,13 +152,11 @@
 
             border: 2px solid #9d4edd;
 
-            padding: 8px 16px; /* Reduced padding for mobile */
+            padding: 10px 20px;
 
-            border-radius: 20px; /* Slightly smaller radius */
+            border-radius: 25px;
 
             transition: 0.3s;
-
-            font-size: 0.8rem; /* Smaller font size for buttons */
 
         }
 
@@ -198,28 +172,28 @@
 
             display: inline-block;
 
-            border-bottom: 3px solid #9d4edd; /* Reduced underline thickness */
+            border-bottom: 4px solid #9d4edd;
 
-            padding-bottom: 3px; /* Reduced padding */
+            padding-bottom: 5px;
 
         }
 
 
         .progress-bar {
 
-            height: 8px; /* Reduced height for mobile */
+            height: 10px;
 
             background-color: #ddd;
 
-            border-radius: 4px; /* Reduced radius */
+            border-radius: 5px;
 
             overflow: hidden;
 
-            margin-top: 6px; /* Reduced margin */
+            margin-top: 8px;
 
             position: relative;
 
-            width: 100%;
+            width: 100%; /* Full width within container */
 
         }
 
@@ -243,9 +217,9 @@
 
             right: 0;
 
-            top: -16px; /* Adjusted position */
+            top: -20px;
 
-            font-size: 12px; /* Smaller font size */
+            font-size: 14px;
 
             color: purple;
 
@@ -258,9 +232,9 @@
 
             opacity: 0;
 
-            transform: translateY(10px); /* Reduced transform distance */
+            transform: translateY(20px);
 
-            transition: opacity 0.8s ease, transform 0.8s ease; /* Slightly faster transition */
+            transition: opacity 1s ease, transform 1s ease;
 
         }
 
@@ -276,9 +250,9 @@
 
         .hover-effect:hover {
 
-            transform: scale(1.01); /* Reduced scale effect */
+            transform: scale(1.02);
 
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow effect */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 
         }
 
@@ -287,14 +261,14 @@
 
         section {
 
-            padding: 30px 15px; /* Reduced section padding */
+            padding: 40px 20px; /* Consistent section padding */
 
         }
 
 
         section:first-of-type {
 
-            border-bottom: 1px solid #181818; /* Thinner border */
+            border-bottom: 2px solid #181818;
 
         }
 
@@ -303,7 +277,7 @@
 
             background-color: #121018;
 
-            min-height: 80vh; /* Reduced height */
+            min-height: 100vh; /* Full viewport height */
 
             display: flex;
 
@@ -315,34 +289,32 @@
 
             border-bottom: none;
 
-            margin-bottom: -75px; /* Reduced margin */
+            margin-bottom: -125px; /* Added margin at the bottom of the home section */
 
         }
 
 
         #home h1 {
 
-            font-size: 2.5rem; /* Adjusted for prominence */
+            font-size: 3.5rem; /* Adjusted for prominence */
 
-            margin-bottom: 8px;
+            margin-bottom: 10px;
 
         }
 
 
         #home p.mt-3 {
 
-            margin-top: 8px;
+            margin-top: 10px;
 
             color: #ddd;
-
-            font-size: 0.9rem; /* Smaller font size */
 
         }
 
 
         #home .mt-5 {
 
-            margin-top: 20px; /* Reduced button spacing */
+            margin-top: 25px; /* Increased button spacing */
 
         }
 
@@ -351,11 +323,11 @@
 
             background-color: #101010;
 
-            min-height: 50vh; /* Reduced height */
+            min-height: 75vh;
 
-            margin-top: 80px; /* Reduced spacing */
+            margin-top: 100px; /* Increased spacing between sections */
 
-            margin-bottom: -75px;
+            margin-bottom: -125px;
 
             border-bottom: none;
 
@@ -366,13 +338,13 @@
 
         #about {
 
-            min-height: 50vh; /* Reduced height */
+            min-height: 75vh;
 
             background-color: #0e0e0e;
 
-            margin-top: 90px; /* Reduced spacing */
+            margin-top: 120px; /* Increased spacing between sections */
 
-            margin-bottom: -75px;
+            margin-bottom: -125px;
 
             text-align: center;
 
@@ -383,13 +355,13 @@
 
         #projects {
 
-            min-height: 50vh; /* Reduced height */
+            min-height: 75vh;
 
             background-color: #121018;
 
-            margin-top: 90px; /* Reduced spacing */
+            margin-top: 120px; /* Increased spacing between sections */
 
-            margin-bottom: -75px;
+            margin-bottom: -125px;
 
             text-align: center;
 
@@ -400,11 +372,11 @@
 
         #contact {
 
-            min-height: 20vh; /* Reduced height */
+            min-height: 25vh;
 
             background-color: #101010;
 
-            margin-top: 90px; /* Reduced spacing */
+            margin-top: 120px; /* Increased spacing between sections */
 
             text-align: center;
 
@@ -415,9 +387,9 @@
 
         h2 {
 
-            font-size: 2em; /* Reduced size */
+            font-size: 2.5em;
 
-            margin-bottom: 8px;
+            margin-bottom: 10px; /* Reduced spacing */
 
             color: #c780eb;
 
@@ -428,7 +400,7 @@
 
         #skills .max-w-2xl {
 
-            max-width: 90%; /* Take up more width on mobile */
+            max-width: 600px; /* Adjusted max width */
 
             margin: 0 auto;
 
@@ -437,29 +409,28 @@
 
         #skills .mb-4 {
 
-            margin-bottom: 16px; /* Reduced spacing */
+            margin-bottom: 20px; /* Increased spacing */
 
         }
 
 
         /* Projects Section */
 
+
         #projects p {
 
-            line-height: 1.4; /* Adjusted line height */
+            line-height: 1.6;
 
-            margin-bottom: 20px;
+            margin-bottom: 30px;
 
             color: #ddd;
-
-            font-size: 0.9rem; /* Smaller font size */
 
         }
 
 
         #projects .filter-buttons {
 
-            margin-bottom: 15px;
+            margin-bottom: 20px;
 
         }
 
@@ -470,19 +441,17 @@
 
             color: white;
 
-            padding: 8px 16px; /* Reduced padding */
+            padding: 10px 20px;
 
             border: none;
 
-            border-radius: 20px; /* Reduced radius */
+            border-radius: 25px;
 
-            margin: 4px; /* Reduced margin */
+            margin: 5px;
 
             cursor: pointer;
 
             transition: background-color 0.3s ease;
-
-            font-size: 0.75rem; /* Smaller font size */
 
         }
 
@@ -500,9 +469,9 @@
 
             display: grid;
 
-            grid-template-columns: 1fr; /* Single column on mobile */
+            grid-template-columns: 1fr 1fr;
 
-            gap: 20px; /* Reduced gap */
+            gap: 40px;
 
         }
 
@@ -522,9 +491,9 @@
 
             height: auto;
 
-            max-height: 300px; /* Reduced max height */
+            max-height: 500px;
 
-            border-radius: 8px; /* Reduced radius */
+            border-radius: 10px;
 
             transition: transform 0.3s ease;
 
@@ -533,7 +502,7 @@
 
         .project-item:hover img {
 
-            transform: scale(1.05); /* Reduced scale effect */
+            transform: scale(1.1);
 
         }
 
@@ -580,16 +549,16 @@
 
         .project-item .project-overlay h3 {
 
-            margin-bottom: 3px; /* Reduced margin */
+            margin-bottom: 5px;
 
-            font-size: 1.2em; /* Reduced font size */
+            font-size: 1.5em;
 
         }
 
 
         .project-item .project-overlay p {
 
-            font-size: 0.9em; /* Reduced font size */
+            font-size: 1em;
 
         }
 
@@ -615,7 +584,7 @@
 
             width: 100%;
 
-            height: 1px; /* Thinner line */
+            height: 2px;
 
             background: linear-gradient(to bottom, transparent, #0e0e0e);
 
@@ -654,7 +623,7 @@
 
             color: white;
 
-            padding: 8px; /* Reduced padding */
+            padding: 10px;
 
             text-align: right;
 
@@ -663,18 +632,27 @@
 
         .blog-preview-title {
 
-            font-size: 1em; /* Reduced font size */
+            font-size: 1.2em;
 
             font-weight: bold;
 
-            margin-bottom: 3px; /* Reduced margin */
+            margin-bottom: 5px;
 
         }
 
 
         .blog-preview-subtitle {
 
-            font-size: 0.8em; /* Reduced font size */
+            font-size: 0.9em;
+
+        }
+
+
+        #projects,
+
+        #contact {
+
+            position: relative;
 
         }
 
@@ -687,9 +665,9 @@
 
             height: auto;
 
-            max-height: 300px; /* Reduced max height */
+            max-height: 500px;
 
-            border-radius: 8px; /* Reduced radius */
+            border-radius: 10px;
 
         }
 
@@ -702,7 +680,7 @@
 
             align-items: flex-end;
 
-            padding: 10px; /* Reduced padding */
+            padding: 20px;
 
             text-align: right;
 
@@ -722,7 +700,7 @@
 
         #about .max-w-3xl {
 
-            max-width: 90%; /* Take up more width on mobile */
+            max-width: 800px; /* Adjusted max width */
 
             margin: 0 auto;
 
@@ -733,7 +711,7 @@
 
         #contact .max-w-3xl {
 
-            max-width: 90%; /* Take up more width on mobile */
+            max-width: 800px; /* Adjusted max width */
 
             margin: 0 auto;
 
@@ -744,11 +722,13 @@
 
             display: flex;
 
-            flex-direction: column; /* Stack contact items vertically */
+            justify-content: center;
 
             align-items: center;
 
-            margin-bottom: 20px;
+            flex-wrap: wrap; /* Wrap on smaller screens */
+
+            margin-bottom: 30px;
 
         }
 
@@ -759,7 +739,7 @@
 
             align-items: center;
 
-            margin: 8px 0; /* Reduced vertical margin */
+            margin: 10px 20px; /* Adjusted spacing */
 
             color: #9d4edd;
 
@@ -770,9 +750,9 @@
 
         .contact-item .icon-container {
 
-            width: 30px; /* Reduced size */
+            width: 40px;
 
-            height: 30px; /* Reduced size */
+            height: 40px;
 
             border-radius: 50%;
 
@@ -784,7 +764,7 @@
 
             align-items: center;
 
-            margin-right: 8px; /* Reduced margin */
+            margin-right: 10px;
 
             transition: background-color 0.3s ease;
 
@@ -800,9 +780,9 @@
 
         .contact-item img {
 
-            width: 16px; /* Reduced size */
+            width: 20px;
 
-            height: 16px; /* Reduced size */
+            height: 20px;
 
             filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(248deg) brightness(95%) contrast(93%);
 
@@ -824,7 +804,7 @@
 
             justify-content: center;
 
-            margin-top: 20px;
+            margin-top: 30px;
 
         }
 
@@ -837,15 +817,15 @@
 
             align-items: center;
 
-            width: 30px; /* Reduced size */
+            width: 40px;
 
-            height: 30px; /* Reduced size */
+            height: 40px;
 
             border-radius: 50%;
 
             background-color: #333;
 
-            margin: 0 8px; /* Reduced margin */
+            margin: 0 10px;
 
             transition: background-color 0.3s ease;
 
@@ -861,9 +841,9 @@
 
         .social-links img {
 
-            width: 16px; /* Reduced size */
+            width: 20px;
 
-            height: 16px; /* Reduced size */
+            height: 20px;
 
             filter: invert(100%);
 
@@ -881,9 +861,9 @@
 
         .copyright {
 
-            margin-top: 30px;
+            margin-top: 50px;
 
-            font-size: 0.7em;
+            font-size: 0.8em;
 
             color: #aaa;
 
@@ -925,15 +905,15 @@
 
 <body>
 
-    <nav class="p-2 flex justify-between items-center text-white">
+    <nav class="p-4 flex justify-between items-center text-white">
 
-        <div class="text-xl font-bold text-purple-400">
+        <div class="text-2xl font-bold text-purple-400">
 
             PORTFOLIO
 
         </div>
 
-        <ul class="flex space-x-4">
+        <ul class="flex space-x-6">
 
             <li><a href="#" id="home-nav">Home</a></li>
 
@@ -947,24 +927,25 @@
 
     </nav>
 
+    
 
     <section id="home" class="flex justify-center items-center min-h-screen">
 
         <div class="text-center">
 
-            <h1 class="text-3xl font-bold">Hi, I'm <span class="text-purple-400 underline-purple">Kaushik</span>
+            <h1 class="text-5xl font-bold">Hi, I'm <span class="text-purple-400 underline-purple">Kaushik</span>
 
             </h1>
 
-            <p class="mt-2 text-lg text-gray-300">A passionate software developer.</p>
+            <p class="mt-3 text-lg text-gray-300">A passionate software developer.</p>
 
-            <p class="mt-2 text-sm text-gray-400">I specialize in building dynamic websites using Django and
+            <p class="mt-3 text-md text-gray-400">I specialize in building dynamic websites using Django and
 
                 continuously explore new technologies to optimize performance and user experience.</p>
 
-            <div class="mt-4">
+            <div class="mt-5">
 
-                <button class="btn-outline">Contact Me</button>
+                <button class="btn-outline ml-3">Contact Me</button>
 
             </div>
 
@@ -973,19 +954,19 @@
     </section>
 
 
-    <section id="skills" class="w-full text-white p-6 text-center fade-in rounded-lg hover-effect">
+    <section id="skills" class="w-full text-white p-10 text-center fade-in rounded-lg hover-effect">
 
-        <h2 class="text-2xl font-bold mb-2">SKILLS</h2>
+        <h2 class="text-3xl font-bold mb-2">SKILLS</h2>
 
-        <div style="width: 40px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+        <div style="width: 80px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
 
-        <p class="text-gray-400 mb-4">My professional expertise and technical proficiency</p>
+        <p class="text-gray-400 mb-6">My professional expertise and technical proficiency</p>
 
         <div class="max-w-2xl mx-auto">
 
-            <div class="mb-3">
+            <div class="mb-4">
 
-                <span class="block text-left text-sm">Python</span>
+                <span class="block text-left">Python</span>
 
                 <span class="progress-text">75%</span>
 
@@ -997,9 +978,9 @@
 
             </div>
 
-            <div class="mb-3">
+            <div class="mb-4">
 
-                <span class="block text-left text-sm">Django</span>
+                <span class="block text-left">Django</span>
 
                 <span class="progress-text">60%</span>
 
@@ -1011,9 +992,9 @@
 
             </div>
 
-            <div class="mb-3">
+            <div class="mb-4">
 
-                <span class="block text-left text-sm">JavaScript</span>
+                <span class="block text-left">JavaScript</span>
 
                 <span class="progress-text">65%</span>
 
@@ -1025,9 +1006,9 @@
 
             </div>
 
-            <div class="mb-3">
+            <div class="mb-4">
 
-                <span class="block text-left text-sm">HTML & CSS</span>
+                <span class="block text-left">HTML & CSS</span>
 
                 <span class="progress-text">90%</span>
 
@@ -1039,9 +1020,9 @@
 
             </div>
 
-            <div class="mb-3">
+            <div class="mb-4">
 
-                <span class="block text-left text-sm">MySQL</span>
+                <span class="block text-left">MySQL</span>
 
                 <span class="progress-text">80%</span>
 
@@ -1059,15 +1040,15 @@
 
 
 
-    <section id="projects" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
+    <section id="projects" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
 
         <div class="max-w-5xl mx-auto">
 
-            <h2 class="text-2xl font-bold mb-2">PORTFOLIO</h2>
+            <h2 class="text-3xl font-bold mb-2">PORTFOLIO</h2>
 
-            <div style="width: 30px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+            <div style="width: 50px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
 
-            <p class="text-gray-400 mb-4 text-sm">Selected projects showcasing my creative work</p>
+            <p class="text-gray-400 mb-6">Selected projects showcasing my creative work</p>
 
             <div class="project-grid">
 
@@ -1075,13 +1056,13 @@
 
                     <a href="https://github.com/Aspergilleshumania/BlogSphere" target="_blank" style="display: block;">
 
-                        <img src="BlogSphere.png" alt="BlogSphere" style="max-height: 200px; width: 100%; object-fit: cover;">
+                        <img src="BlogSphere.png" alt="BlogSphere" style="height:300px; width:900px;">
 
                         <div class="project-overlay">
 
                             <h3>BlogSphere</h3>
 
-                            <p class="text-sm">Full Stack Website using Django Framework</p>
+                            <p>Full Stack Website using Django Framework</p>
 
                         </div>
 
@@ -1093,15 +1074,15 @@
 
                     <a href="https://github.com/rahulp0817/automation-workflow" target="_blank" style="display: block;">
 
-                        <img src="CogniTask.png" alt="CogniTask" style="max-height: 200px; width: 100%; object-fit: cover;">
+                    <img src="CogniTask.png" alt="CogniTask" style="height:300px; width:900px;">
 
-                        <div class="project-overlay">
+                    <div class="project-overlay">
 
-                            <h3>CogniTask</h3>
+                        <h3>CogniTask</h3>
 
-                            <p class="text-sm">Automation Platform</p>
+                        <p>Automation Platform</p>
 
-                        </div>
+                    </div>
 
                     </a>
 
@@ -1113,17 +1094,19 @@
 
     </section>
 
+    
 
+    
 
-    <section id="about" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
+    <section id="about" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
 
         <div class="max-w-3xl mx-auto text-center">
 
-            <h2 class="text-2xl font-bold mb-3">ABOUT ME</h2>
+            <h2 class="text-3xl font-bold mb-4">ABOUT ME</h2>
 
-            <div style="width: 40px; height: 3px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099)"></div>
+            <div style="width: 80px; height: 5px; margin: 0 auto 15px; background-image: linear-gradient(to right, #9d4edd, #eb8099)"></div>
 
-            <p class="mb-4 text-lg text-gray-300" style="line-height: 1.6; font-size: 0.9rem;">
+            <p class="mb-6 text-lg text-gray-300" style="line-height: 1.8;">
 
                 I am a dedicated and skilled individual with a growing expertise in software development,
 
@@ -1137,8 +1120,9 @@
 
             </p>
 
+    
 
-            <p class="text-lg text-gray-300" style="line-height: 1.6; font-size: 0.9rem;">
+            <p class="text-lg text-gray-300" style="line-height: 1.8;">
 
                 My focus is on building responsive and engaging websites using the Django Framework. I strive to
 
@@ -1154,17 +1138,19 @@
 
     </section>
 
+    
 
+    
 
-    <section id="contact" class="w-full text-white p-6 fade-in rounded-lg hover-effect">
+    <section id="contact" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
 
         <div class="max-w-3xl mx-auto">
 
-            <h2 class="text-2xl font-bold mb-2">Get in touch</h2>
+            <h2 class="text-3xl font-bold mb-2">Get in touch</h2>
 
-            <div style="width: 40px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+            <div style="width: 80px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
 
-            <p class="text-sm mb-4">Have a project in mind? Let's work together to create something amazing.</p>
+            <p>Have a project in mind? Let's work together to create something amazing.</p>
 
             <div class="contact-info">
 
@@ -1176,7 +1162,7 @@
 
                     </div>
 
-                    <span class="text-sm">d78629175@gmail.com</span>
+                    <span>d78629175@gmail.com</span>
 
                 </div>
 
@@ -1188,7 +1174,7 @@
 
                     </div>
 
-                    <span class="text-sm">+91 9606646371</span>
+                    <span>+91 9606646371</span>
 
                 </div>
 
@@ -1200,7 +1186,7 @@
 
                     </div>
 
-                    <span class="text-sm">Karnataka,India</span>
+                    <span>Karnataka,India</span>
 
                 </div>
 
@@ -1214,13 +1200,14 @@
 
             </div>
 
-            <p class="copyright text-xs">&copy; 2025 Kaushik. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 Kaushik. All Rights Reserved.</p>
 
         </div>
 
     </section>
 
 
+    
 
     <script>
 
@@ -1358,4 +1345,6 @@
 </body>
 
 
-</html> 
+</html>
+
+
