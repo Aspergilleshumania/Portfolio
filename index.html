@@ -873,22 +873,9 @@
         </div>
     </section>
 
-<script>
-     document.addEventListener("DOMContentLoaded", function () {
-            const sections = document.querySelectorAll(".fade-in");
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        entry.target.querySelectorAll(".progress-fill").forEach(bar => {
-                            bar.style.width = bar.getAttribute("data-progress");
-                        });
-                    }
-                });
-            }, { threshold: 0.3 });
 
-            sections.forEach(section => observer.observe(section));
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
             const sections = document.querySelectorAll(".fade-in");
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
@@ -929,9 +916,13 @@
 
             window.addEventListener("scroll", function() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                // Make the nav and hamburger disappear on any scroll direction
-                nav.classList.add("hidden");
-                hamburger.classList.add("hidden");
+                if (scrollTop > lastScrollTop) {
+                    nav.classList.add("hidden");
+                    hamburger.classList.add("hidden");
+                } else {
+                    nav.classList.remove("hidden");
+                    hamburger.classList.remove("hidden");
+                }
                 lastScrollTop = scrollTop;
             });
 
@@ -971,6 +962,9 @@
             });
         });
     </script>
+</body>
+
+</html>
 </body>
 
 </html>
