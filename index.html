@@ -20,9 +20,9 @@
         /* Navigation */
         nav {
             background-color: #080808;
-            padding: 10px 15px; /* Further reduced padding */
+            padding: 8px 10px; /* Even further reduced padding */
             border-bottom: 1px solid #181818;
-            position: fixed; /* Changed to fixed for disappearance effect */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -38,7 +38,7 @@
         }
 
         nav .logo {
-            font-size: 1.5rem; /* Further reduced logo size */
+            font-size: 1.2rem; /* Even further reduced logo size */
             font-weight: bold;
             color: #c780eb;
         }
@@ -46,10 +46,10 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 10px; /* Further reduced margin */
+            margin-left: 8px; /* Even further reduced margin */
             transition: color 0.3s ease;
             position: relative;
-            font-size: 0.9rem; /* Further reduced font size */
+            font-size: 0.8rem; /* Even further reduced font size */
         }
 
         nav a:hover,
@@ -63,9 +63,9 @@
             content: '';
             position: absolute;
             left: 0;
-            bottom: -3px; /* Adjusted bottom position */
+            bottom: -2px; /* Further adjusted bottom position */
             width: 100%;
-            height: 1.5px; /* Reduced height */
+            height: 1px; /* Further reduced height */
             background-color: #c780eb;
             transform: scaleX(0);
             transform-origin: left;
@@ -81,14 +81,14 @@
         .hamburger {
             display: none;
             cursor: pointer;
-            padding: 8px; /* Further reduced padding */
+            padding: 6px; /* Even further reduced padding */
         }
 
         .bar {
             display: block;
-            width: 20px; /* Further reduced width */
-            height: 2px; /* Further reduced height */
-            margin: 4px auto; /* Further reduced margin */
+            width: 18px; /* Even further reduced width */
+            height: 1.5px; /* Even further reduced height */
+            margin: 3px auto; /* Even further reduced margin */
             -webkit-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
             background-color: white;
@@ -99,11 +99,11 @@
         }
 
         .hamburger.active .bar:nth-child(1) {
-            transform: translateY(6px) rotate(45deg); /* Adjusted transform */
+            transform: translateY(5px) rotate(45deg); /* Adjusted transform */
         }
 
         .hamburger.active .bar:nth-child(3) {
-            transform: translateY(-6px) rotate(-45deg); /* Adjusted transform */
+            transform: translateY(-5px) rotate(-45deg); /* Adjusted transform */
         }
 
         .nav-menu {
@@ -115,33 +115,33 @@
             display: flex;
             flex-direction: column;
             position: absolute;
-            top: 45px; /* Adjusted top */
+            top: 38px; /* Further adjusted top */
             right: 0;
             background-color: #080808;
             width: 100%;
             text-align: center;
-            padding: 8px 0; /* Further reduced padding */
+            padding: 6px 0; /* Even further reduced padding */
         }
 
         .nav-menu.active a {
-            margin: 10px 0; /* Further reduced margin */
-            font-size: 0.9rem; /* Further reduced font size */
-            padding: 6px 0; /* Further reduced padding */
+            margin: 8px 0; /* Further reduced margin */
+            font-size: 0.75rem; /* Even further reduced font size */
+            padding: 5px 0; /* Further reduced padding */
         }
 
         /* Reusable Styles */
         .glow-border {
-            border: 3px solid #9d4edd; /* Reduced border width */
+            border: 2px solid #9d4edd; /* Further reduced border width */
             border-radius: 50%;
-            box-shadow: 0 0 10px #9d4edd; /* Reduced shadow */
+            box-shadow: 0 0 8px #9d4edd; /* Further reduced shadow */
         }
 
         .btn-primary {
             background: #9d4edd;
-            padding: 8px 15px; /* Reduced padding */
-            border-radius: 20px; /* Reduced border radius */
+            padding: 6px 10px; /* Further reduced padding */
+            border-radius: 15px; /* Further reduced border radius */
             transition: 0.3s;
-            font-size: 0.9rem; /* Reduced font size */
+            font-size: 0.8rem; /* Further reduced font size */
         }
 
         .btn-primary:hover {
@@ -149,11 +149,11 @@
         }
 
         .btn-outline {
-            border: 1.5px solid #9d4edd; /* Reduced border width */
-            padding: 8px 15px; /* Reduced padding */
-            border-radius: 20px; /* Reduced border radius */
+            border: 1px solid #9d4edd; /* Further reduced border width */
+            padding: 6px 10px; /* Further reduced padding */
+            border-radius: 15px; /* Further reduced border radius */
             transition: 0.3s;
-            font-size: 0.9rem; /* Reduced font size */
+            font-size: 0.8rem; /* Further reduced font size */
         }
 
         .btn-outline:hover {
@@ -161,16 +161,16 @@
         }
 
         .underline-purple {
-            border-bottom: 3px solid #9d4edd; /* Reduced border width */
-            padding-bottom: 3px; /* Reduced padding */
+            border-bottom: 2px solid #9d4edd; /* Further reduced border width */
+            padding-bottom: 2px; /* Further reduced padding */
         }
 
         .progress-bar {
-            height: 6px; /* Reduced height */
+            height: 4px; /* Further reduced height */
             background-color: #ddd;
-            border-radius: 3px; /* Reduced border radius */
+            border-radius: 2px; /* Further reduced border radius */
             overflow: hidden;
-            margin-top: 6px; /* Reduced margin */
+            margin-top: 4px; /* Further reduced margin */
             position: relative;
             width: 100%;
             /* Full width within container */
@@ -186,15 +186,15 @@
         .progress-text {
             position: absolute;
             right: 0;
-            top: -15px; /* Adjusted top position */
-            font-size: 0.8rem; /* Reduced font size */
+            top: -12px; /* Further adjusted top position */
+            font-size: 0.7rem; /* Further reduced font size */
             color: purple;
             display: none;
         }
 
         .fade-in {
             opacity: 0;
-            transform: translateY(15px); /* Reduced Y offset */
+            transform: translateY(10px); /* Further reduced Y offset */
             transition: opacity 1s ease, transform 1s ease;
         }
 
@@ -204,265 +204,265 @@
         }
 
         .hover-effect:hover {
-            transform: scale(1.01); /* Reduced scale effect */
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+            transform: scale(1.005); /* Further reduced scale effect */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Further reduced shadow */
         }
 
         /* Section Styles */
         section {
-            padding: 30px 15px; /* Reduced padding */
+            padding: 20px 10px; /* Further reduced padding */
             /* Consistent section padding */
         }
 
         section:first-of-type {
-            border-bottom: 1.5px solid #181818; /* Reduced border width */
+            border-bottom: 1px solid #181818; /* Further reduced border width */
         }
 
         #home {
-            padding-top: 50px; /* Adjusted padding for fixed nav */
-            padding-bottom: 50px; /* Adjusted padding */
-            margin-bottom: -75px; /* Adjusted negative margin */
+            padding-top: 38px; /* Adjusted padding for fixed nav */
+            padding-bottom: 40px; /* Adjusted padding */
+            margin-bottom: -60px; /* Adjusted negative margin */
         }
 
         #home h1 {
-            font-size: 2.5rem; /* Further reduced font size */
-            margin-bottom: 8px; /* Reduced margin */
+            font-size: 2rem; /* Further reduced font size */
+            margin-bottom: 6px; /* Reduced margin */
         }
 
         #home p.mt-3 {
-            margin-top: 8px; /* Reduced margin */
-            font-size: 0.9rem; /* Reduced font size */
+            margin-top: 6px; /* Reduced margin */
+            font-size: 0.8rem; /* Reduced font size */
         }
 
         #home .mt-5 {
-            margin-top: 15px; /* Reduced margin */
+            margin-top: 12px; /* Reduced margin */
         }
 
         #skills {
-            margin-top: 70px; /* Adjusted margin */
-            margin-bottom: -75px; /* Adjusted negative margin */
+            margin-top: 60px; /* Adjusted margin */
+            margin-bottom: -60px; /* Adjusted negative margin */
         }
 
         #about {
-            margin-top: 80px; /* Adjusted margin */
-            margin-bottom: -75px; /* Adjusted negative margin */
+            margin-top: 70px; /* Adjusted margin */
+            margin-bottom: -60px; /* Adjusted negative margin */
         }
 
         #projects {
-            margin-top: 80px; /* Adjusted margin */
-            margin-bottom: -75px; /* Adjusted negative margin */
+            margin-top: 70px; /* Adjusted margin */
+            margin-bottom: -60px; /* Adjusted negative margin */
         }
 
         #contact {
-            margin-top: 80px; /* Adjusted margin */
+            margin-top: 70px; /* Adjusted margin */
         }
 
         /* Heading Styles */
         h2 {
-            font-size: 2rem; /* Further reduced font size */
-            margin-bottom: 8px; /* Reduced margin */
+            font-size: 1.6rem; /* Further reduced font size */
+            margin-bottom: 6px; /* Reduced margin */
         }
 
         /* Skills Section */
         #skills .max-w-2xl {
-            max-width: 500px; /* Adjusted max width */
+            max-width: 400px; /* Adjusted max width */
         }
 
         #skills .mb-4 {
-            margin-bottom: 15px; /* Reduced margin */
+            margin-bottom: 12px; /* Reduced margin */
         }
 
         /* Projects Section */
         #projects p {
-            line-height: 1.4; /* Reduced line height */
-            margin-bottom: 20px; /* Reduced margin */
-            font-size: 0.9rem; /* Reduced font size */
+            line-height: 1.3; /* Reduced line height */
+            margin-bottom: 15px; /* Reduced margin */
+            font-size: 0.8rem; /* Reduced font size */
         }
 
         #projects .filter-buttons {
-            margin-bottom: 15px; /* Reduced margin */
+            margin-bottom: 12px; /* Reduced margin */
         }
 
         #projects .filter-buttons button {
-            padding: 8px 15px; /* Reduced padding */
-            border-radius: 20px; /* Reduced border radius */
-            margin: 3px; /* Reduced margin */
-            font-size: 0.85rem; /* Reduced font size */
+            padding: 6px 10px; /* Reduced padding */
+            border-radius: 15px; /* Reduced border radius */
+            margin: 2px; /* Reduced margin */
+            font-size: 0.75rem; /* Reduced font size */
         }
 
         #projects .project-grid {
-            gap: 20px; /* Reduced grid gap */
+            gap: 15px; /* Reduced grid gap */
             grid-template-columns: 1fr; /* Stack on smaller screens */
         }
 
         .project-item img {
-            max-height: 250px; /* Reduced max height */
+            max-height: 180px; /* Reduced max height */
         }
 
         .project-item .project-overlay h3 {
-            font-size: 1.2rem; /* Reduced font size */
-            margin-bottom: 3px; /* Reduced margin */
+            font-size: 1rem; /* Reduced font size */
+            margin-bottom: 2px; /* Reduced margin */
         }
 
         .project-item .project-overlay p {
-            font-size: 0.85rem; /* Reduced font size */
+            font-size: 0.7rem; /* Reduced font size */
         }
 
         /* About Section */
         #about .max-w-3xl {
-            max-width: 700px; /* Adjusted max width */
+            max-width: 600px; /* Adjusted max width */
         }
 
         #about p {
-            font-size: 0.95rem; /* Reduced font size */
-            line-height: 1.5; /* Reduced line height */
-            margin-bottom: 15px; /* Reduced margin */
+            font-size: 0.85rem; /* Reduced font size */
+            line-height: 1.4; /* Reduced line height */
+            margin-bottom: 12px; /* Reduced margin */
         }
 
         /* Contact Section */
         #contact .max-w-3xl {
-            max-width: 700px; /* Adjusted max width */
+            max-width: 600px; /* Adjusted max width */
         }
 
         .contact-info {
-            margin-bottom: 20px; /* Reduced margin */
+            margin-bottom: 15px; /* Reduced margin */
         }
 
         .contact-item {
-            margin: 8px 15px; /* Reduced margin */
-            font-size: 0.9rem; /* Reduced font size */
+            margin: 6px 10px; /* Reduced margin */
+            font-size: 0.8rem; /* Reduced font size */
         }
 
         .contact-item .icon-container {
-            width: 30px; /* Reduced size */
-            height: 30px; /* Reduced size */
-            margin-right: 8px; /* Reduced margin */
+            width: 25px; /* Reduced size */
+            height: 25px; /* Reduced size */
+            margin-right: 6px; /* Reduced margin */
         }
 
         .contact-item img {
-            width: 16px; /* Reduced size */
-            height: 16px; /* Reduced size */
+            width: 14px; /* Reduced size */
+            height: 14px; /* Reduced size */
         }
 
         .social-links {
-            margin-top: 20px; /* Reduced margin */
+            margin-top: 15px; /* Reduced margin */
         }
 
         .social-links a {
-            width: 30px; /* Reduced size */
-            height: 30px; /* Reduced size */
-            margin: 0 8px; /* Reduced margin */
+            width: 25px; /* Reduced size */
+            height: 25px; /* Reduced size */
+            margin: 0 6px; /* Reduced margin */
         }
 
         .social-links img {
-            width: 16px; /* Reduced size */
-            height: 16px; /* Reduced size */
+            width: 12px; /* Reduced size */
+            height: 12px; /* Reduced size */
         }
 
         .copyright {
-            margin-top: 30px; /* Reduced margin */
-            font-size: 0.75em; /* Reduced font size */
+            margin-top: 15px; /* Reduced margin */
+            font-size: 0.65em; /* Reduced font size */
         }
 
         /* Mobile Styles */
         @media screen and (max-width: 768px) {
             nav {
-                padding: 8px 10px; /* Further reduced mobile nav padding */
+                padding: 6px 8px; /* Even further reduced mobile nav padding */
             }
 
             nav .logo {
-                font-size: 1.2rem; /* Further reduced mobile logo size */
+                font-size: 1rem; /* Even further reduced mobile logo size */
             }
 
             nav a {
-                margin-left: 8px; /* Further reduced mobile margin */
-                font-size: 0.8rem; /* Further reduced mobile font size */
+                margin-left: 6px; /* Even further reduced mobile margin */
+                font-size: 0.7rem; /* Even further reduced mobile font size */
             }
 
             .hamburger {
-                padding: 6px; /* Further reduced mobile hamburger padding */
+                padding: 5px; /* Even further reduced mobile hamburger padding */
             }
 
             .bar {
-                width: 18px; /* Further reduced mobile bar width */
-                height: 1.5px; /* Further reduced mobile bar height */
-                margin: 3px auto; /* Further reduced mobile bar margin */
+                width: 16px; /* Even further reduced mobile bar width */
+                height: 1px; /* Even further reduced mobile bar height */
+                margin: 2.5px auto; /* Even further reduced mobile bar margin */
             }
 
             .hamburger.active .bar:nth-child(1) {
-                transform: translateY(5px) rotate(45deg); /* Adjusted mobile transform */
+                transform: translateY(4px) rotate(45deg); /* Adjusted mobile transform */
             }
 
             .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-5px) rotate(-45deg); /* Adjusted mobile transform */
+                transform: translateY(-4px) rotate(-45deg); /* Adjusted mobile transform */
             }
 
             .nav-menu {
-                top: 40px; /* Adjusted mobile top */
-                padding: 6px 0; /* Further reduced mobile menu padding */
+                top: 34px; /* Adjusted mobile top */
+                padding: 5px 0; /* Even further reduced mobile menu padding */
             }
 
             .nav-menu.active a {
-                margin: 8px 0; /* Further reduced mobile margin */
-                font-size: 0.8rem; /* Further reduced mobile font size */
-                padding: 5px 0; /* Further reduced mobile padding */
+                margin: 6px 0; /* Even further reduced mobile margin */
+                font-size: 0.7rem; /* Even further reduced mobile font size */
+                padding: 4px 0; /* Even further reduced mobile padding */
             }
 
             body.menu-open {
-                padding-top: 40px; /* Adjusted mobile body padding-top */
+                padding-top: 34px; /* Adjusted mobile body padding-top */
             }
 
             #home {
-                padding-top: 40px;
-                padding-bottom: 40px;
-                padding-left: 15px;
-                padding-right: 15px;
+                padding-top: 34px;
+                padding-bottom: 30px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
             #home h1 {
-                font-size: 2rem; /* Further reduced mobile heading size */
+                font-size: 1.6rem; /* Even further reduced mobile heading size */
             }
 
             #home p.mt-3 {
-                font-size: 0.85rem; /* Further reduced mobile text size */
+                font-size: 0.75rem; /* Even further reduced mobile text size */
             }
 
             .btn-outline {
-                padding: 6px 12px; /* Further reduced mobile button padding */
-                font-size: 0.8rem; /* Further reduced mobile button size */
+                padding: 5px 8px; /* Even further reduced mobile button padding */
+                font-size: 0.7rem; /* Even further reduced mobile button size */
             }
 
             section {
-                padding: 20px 10px; /* Further reduced mobile section padding */
+                padding: 15px 8px; /* Even further reduced mobile section padding */
             }
 
             h2 {
-                font-size: 1.6rem; /* Further reduced mobile section heading size */
+                font-size: 1.4rem; /* Even further reduced mobile section heading size */
             }
 
             #skills .mb-4 {
-                margin-bottom: 10px; /* Further reduced mobile skill margin */
+                margin-bottom: 8px; /* Even further reduced mobile skill margin */
             }
 
             #projects .project-grid {
-                gap: 15px; /* Further reduced mobile grid gap */
+                gap: 10px; /* Even further reduced mobile grid gap */
             }
 
             .project-item img {
-                max-height: 200px; /* Further reduced mobile image height */
+                max-height: 150px; /* Even further reduced mobile image height */
             }
 
             .project-item .project-overlay h3 {
-                font-size: 1rem; /* Further reduced mobile overlay heading size */
+                font-size: 0.9rem; /* Even further reduced mobile overlay heading size */
             }
 
             .project-item .project-overlay p {
-                font-size: 0.75rem; /* Further reduced mobile overlay text size */
+                font-size: 0.65rem; /* Even further reduced mobile overlay text size */
             }
 
             #about p {
-                font-size: 0.9rem; /* Further reduced mobile about text size */
-                margin-bottom: 10px; /* Further reduced mobile about margin */
+                font-size: 0.8rem; /* Even further reduced mobile about text size */
+                margin-bottom: 8px; /* Even further reduced mobile about margin */
             }
 
             .contact-info {
@@ -471,28 +471,39 @@
             }
 
             .contact-item {
-                margin: 6px 0; /* Further reduced mobile contact margin */
-                font-size: 0.85rem; /* Further reduced mobile contact size */
+                margin: 5px 0; /* Even further reduced mobile contact margin */
+                font-size: 0.75rem; /* Even further reduced mobile contact size */
+            }
+
+            .contact-item .icon-container {
+                width: 20px; /* Further reduced mobile icon size */
+                height: 20px; /* Further reduced mobile icon size */
+                margin-right: 5px; /* Further reduced mobile icon margin */
+            }
+
+            .contact-item img {
+                width: 12px; /* Further reduced mobile contact image size */
+                height: 12px; /* Further reduced mobile contact image size */
             }
 
             .social-links {
-                margin-top: 15px; /* Further reduced mobile social margin */
+                margin-top: 10px; /* Further reduced mobile social margin */
             }
 
             .social-links a {
-                width: 25px; /* Further reduced mobile social icon size */
-                height: 25px; /* Further reduced mobile social icon size */
-                margin: 0 6px; /* Further reduced mobile social margin */
+                width: 20px; /* Further reduced mobile social icon size */
+                height: 20px; /* Further reduced mobile social icon size */
+                margin: 0 5px; /* Further reduced mobile social margin */
             }
 
             .social-links img {
-                width: 14px; /* Further reduced mobile social image size */
-                height: 14px; /* Further reduced mobile social image size */
+                width: 10px; /* Further reduced mobile social image size */
+                height: 10px; /* Further reduced mobile social image size */
             }
 
             .copyright {
-                margin-top: 20px; /* Further reduced mobile copyright margin */
-                font-size: 0.7em; /* Further reduced mobile copyright size */
+                margin-top: 10px; /* Further reduced mobile copyright margin */
+                font-size: 0.6em; /* Further reduced mobile copyright size */
             }
         }
     </style>
@@ -500,7 +511,7 @@
 
 <body>
     <nav class="p-4 flex justify-between items-center text-white">
-        <div class="text-2xl font-bold text-purple-400 logo">
+        <div class="text-xl font-bold text-purple-400 logo">
             PORTFOLIO
         </div>
         <div class="hamburger">
@@ -518,51 +529,51 @@
 
     <section id="home" class="flex justify-center items-center min-h-screen">
         <div class="text-center">
-            <h1 class="text-5xl font-bold">Hi, I'm <span class="text-purple-400 underline-purple">Kaushik</span>
+            <h1 class="text-4xl font-bold">Hi, I'm <span class="text-purple-400 underline-purple">Kaushik</span>
             </h1>
-            <p class="mt-3 text-lg text-gray-300">A passionate software developer.</p>
-            <p class="mt-3 text-md text-gray-400">I specialize in building dynamic websites using Django and
+            <p class="mt-2 text-lg text-gray-300">A passionate software developer.</p>
+            <p class="mt-2 text-md text-gray-400">I specialize in building dynamic websites using Django and
                 continuously explore new technologies to optimize performance and user experience.</p>
-            <div class="mt-5">
-                <button class="btn-outline ml-3">Contact Me</button>
+            <div class="mt-4">
+                <button class="btn-outline ml-2">Contact Me</button>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="w-full text-white p-10 text-center fade-in rounded-lg hover-effect">
-        <h2 class="text-3xl font-bold mb-2">SKILLS</h2>
-        <div style="width: 80px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
-        <p class="text-gray-400 mb-6">My professional expertise and technical proficiency</p>
+    <section id="skills" class="w-full text-white p-8 text-center fade-in rounded-lg hover-effect">
+        <h2 class="text-2xl font-bold mb-1">SKILLS</h2>
+        <div style="width: 60px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+        <p class="text-gray-400 mb-4">My professional expertise and technical proficiency</p>
         <div class="max-w-2xl mx-auto">
-            <div class="mb-4">
+            <div class="mb-3">
                 <span class="block text-left">Python</span>
                 <span class="progress-text">75%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="75%"></div>
                 </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-3">
                 <span class="block text-left">Django</span>
                 <span class="progress-text">60%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="60%"></div>
                 </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-3">
                 <span class="block text-left">JavaScript</span>
                 <span class="progress-text">65%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="65%"></div>
                 </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-3">
                 <span class="block text-left">HTML & CSS</span>
                 <span class="progress-text">90%</span>
                 <div class="progress-bar">
                     <div class="progress-fill" data-progress="90%"></div>
                 </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-3">
                 <span class="block text-left">MySQL</span>
                 <span class="progress-text">80%</span>
                 <div class="progress-bar">
@@ -573,15 +584,15 @@
     </section>
 
 
-    <section id="projects" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
+    <section id="projects" class="w-full text-white p-8 fade-in rounded-lg hover-effect">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-2">PORTFOLIO</h2>
-            <div style="width: 50px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
-            <p class="text-gray-400 mb-6">Selected projects showcasing my creative work</p>
+            <h2 class="text-2xl font-bold mb-1">PORTFOLIO</h2>
+            <div style="width: 40px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+            <p class="text-gray-400 mb-4">Selected projects showcasing my creative work</p>
             <div class="project-grid">
                 <div class="project-item">
                     <a href="https://github.com/Aspergilleshumania/BlogSphere" target="_blank" style="display: block;">
-                        <img src="BlogSphere.png" alt="BlogSphere" style="height:300px; width:900px;">
+                        <img src="BlogSphere.png" alt="BlogSphere" style="height:200px; width:100%;">
                         <div class="project-overlay">
                             <h3>BlogSphere</h3>
                             <p>Full Stack Website using Django Framework</p>
@@ -590,7 +601,7 @@
                 </div>
                 <div class="project-item">
                     <a href="https://github.com/rahulp0817/automation-workflow" target="_blank" style="display: block;">
-                    <img src="CogniTask.png" alt="CogniTask" style="height:300px; width:900px;">
+                    <img src="CogniTask.png" alt="CogniTask" style="height:200px; width:100%;">
                         <div class="project-overlay">
                             <h3>CogniTask</h3>
                             <p>Automation Platform</p>
@@ -602,11 +613,11 @@
     </section>
 
 
-    <section id="about" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
+    <section id="about" class="w-full text-white p-8 fade-in rounded-lg hover-effect">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4">ABOUT ME</h2>
-            <div style="width: 80px; height: 5px; margin: 0 auto 15px; background-image: linear-gradient(to right, #9d4edd, #eb8099)"></div>
-            <p class="mb-6 text-lg text-gray-300" style="line-height: 1.8;">
+            <h2 class="text-2xl font-bold mb-2">ABOUT ME</h2>
+            <div style="width: 60px; height: 3px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099)"></div>
+            <p class="mb-4 text-lg text-gray-300" style="line-height: 1.6;">
                 I am a dedicated and skilled individual with a growing expertise in software development,
                 particularly in Python and the Django Framework. I am passionate about crafting efficient,
                 user-friendly, and dynamic web applications. I possess a strong foundation in database
@@ -614,7 +625,7 @@
                 development with a holistic understanding of the technology stack.
             </p>
 
-            <p class="text-lg text-gray-300" style="line-height: 1.8;">
+            <p class="text-lg text-gray-300" style="line-height: 1.6;">
                 My focus is on building responsive and engaging websites using the Django Framework. I strive to
                 create solutions that are not only functional but also deliver a unique and seamless user
                 experience. I am eager to apply my technical abilities and contribute to challenging projects
@@ -624,10 +635,10 @@
     </section>
 
 
-    <section id="contact" class="w-full text-white p-10 fade-in rounded-lg hover-effect">
+    <section id="contact" class="w-full text-white p-8 fade-in rounded-lg hover-effect">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-2">Get in touch</h2>
-            <div style="width: 80px; height: 5px; margin: 0 auto 10px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
+            <h2 class="text-2xl font-bold mb-1">Get in touch</h2>
+            <div style="width: 60px; height: 3px; margin: 0 auto 8px; background-image: linear-gradient(to right, #9d4edd, #eb8099);"></div>
             <p>Have a project in mind? Let's work together to create something amazing.</p>
             <div class="contact-info">
                 <div class="contact-item">
