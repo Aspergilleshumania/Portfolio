@@ -604,9 +604,13 @@
                 display: flex !important;
             }
 
-            .nav-menu a {
+            .nav-menu.active a {
                 margin: 15px 0;
                 font-size: 1.1em;
+            }
+
+            .nav-menu a {
+                margin: 0 15px; /* Added horizontal margin for spacing */
             }
 
             .nav-menu a:hover::after,
