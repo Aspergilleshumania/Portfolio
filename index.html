@@ -20,14 +20,21 @@
         /* Navigation */
         nav {
             background-color: #080808;
-            padding: 20px;
+            padding: 25px 20px; /* Increased padding for height */
             border-bottom: 1px solid #181818;
-            position: sticky;
+            position: fixed; /* Changed to fixed */
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 100;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: transform 0.3s ease-in-out; /* For the hide/show effect */
+        }
+
+        nav.hidden {
+            transform: translateY(-100%);
         }
 
         nav .logo {
@@ -107,7 +114,7 @@
             display: flex;
             flex-direction: column;
             position: absolute;
-            top: 60px;
+            top: 65px; /* Adjusted top to account for increased nav height */
             right: 0;
             background-color: #080808;
             width: 100%;
@@ -218,6 +225,7 @@
             border-bottom: none;
             margin-bottom: -125px;
             /* Added margin at the bottom of the home section */
+            padding-top: 65px; /* Adjusted padding to account for fixed nav */
         }
 
         #home h1 {
@@ -244,6 +252,7 @@
             margin-bottom: -125px;
             border-bottom: none;
             text-align: center;
+            padding-top: 65px; /* Adjusted padding to account for fixed nav */
         }
 
         #about {
@@ -254,6 +263,7 @@
             margin-bottom: -125px;
             text-align: center;
             border-bottom: none;
+            padding-top: 65px; /* Adjusted padding to account for fixed nav */
         }
 
         #projects {
@@ -264,6 +274,7 @@
             margin-bottom: -125px;
             text-align: center;
             border-bottom: none;
+            padding-top: 65px; /* Adjusted padding to account for fixed nav */
         }
 
         #contact {
@@ -272,6 +283,7 @@
             margin-top: 120px;
             /* Increased spacing between sections */
             text-align: center;
+            padding-top: 65px; /* Adjusted padding to account for fixed nav */
         }
 
         /* Heading Styles */
@@ -541,7 +553,7 @@
 
         .copyright {
             margin-top: 50px;
-            font-size: 0.8em;
+            font-size:0.8em;
             color: #aaa;
         }
 
@@ -582,7 +594,8 @@
                 width: 100%;
                 text-align: center;
                 padding: 10px 0;
-                display: none; /* Initially hidden on small screens */
+                display: none;
+                /* Initially hidden on small screens */
                 flex-direction: column;
                 align-items: center;
             }
@@ -618,7 +631,8 @@
             }
 
             .project-item img {
-                max-height: none; /* Allow full height within container */
+                max-height: none;
+                /* Allow full height within container */
             }
 
             #about .max-w-3xl {
@@ -737,11 +751,11 @@
                 </div>
                 <div class="project-item">
                     <a href="https://github.com/rahulp0817/automation-workflow" target="_blank" style="display: block;">
-                    <img src="CogniTask.png" alt="CogniTask" style="height:300px; width:900px;">
-                    <div class="project-overlay">
-                        <h3>CogniTask</h3>
-                        <p>Automation Platform</p>
-                    </div>
+                        <img src="CogniTask.png" alt="CogniTask" style="height:300px; width:900px;">
+                        <div class="project-overlay">
+                            <h3>CogniTask</h3>
+                            <p>Automation Platform</p>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -823,6 +837,8 @@
 
             const hamburger = document.querySelector(".hamburger");
             const navMenu = document.querySelector(".nav-menu");
+            const nav = document.querySelector("nav");
+            let lastScrollTop = 0;
 
             hamburger.addEventListener("click", () => {
                 hamburger.classList.toggle("active");
@@ -836,6 +852,16 @@
                     hamburger.classList.remove("active");
                     navMenu.classList.remove("active");
                 });
+            });
+
+            window.addEventListener("scroll", function () {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    nav.classList.add("hidden");
+                } else {
+                    nav.classList.remove("hidden");
+                }
+                lastScrollTop = scrollTop;
             });
 
             const sectionsScroll = document.querySelectorAll("section");
