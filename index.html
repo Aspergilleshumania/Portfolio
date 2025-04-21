@@ -573,7 +573,6 @@
         }
 
         /* Media Queries for Responsiveness */
-    /* Media Queries for Responsiveness */
         @media screen and (max-width: 768px) {
             nav .nav-menu {
                 display: none !important;
@@ -606,17 +605,33 @@
             }
 
             .nav-menu.active a {
-                margin: 25px 0; /* Further increased vertical margin */
-                padding: 8px 0; /* Added vertical padding to the link text */
+                margin: 20px 0; /* Slightly reduced vertical margin */
+                padding: 5px 0; /* Reduced vertical padding on the link text */
+                display: inline-block; /* Ensure the underline spans the text width */
             }
 
             .nav-menu a {
-                margin: 0 30px; /* Further increased horizontal margin */
+                margin: 0 30px; /* Increased horizontal margin */
+                position: relative; /* Needed for absolute positioning of the pseudo-element */
             }
 
             .nav-menu a:hover::after,
             .nav-menu a.active::after {
-                bottom: -8px;
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -3px; /* Moved the underline closer to the text */
+                width: 100%;
+                height: 2px;
+                background-color: #c780eb;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease;
+            }
+
+            .nav-menu a:hover::after,
+            .nav-menu a.active::after {
+                transform: scaleX(1);
             }
 
             #home h1 {
