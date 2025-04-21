@@ -593,7 +593,7 @@
                 background-color: #080808;
                 width: 100%;
                 text-align: center;
-                padding: 15px 0; /* Increased padding around the menu items */
+                padding: 10px 0; /* Reduced padding around the menu items */
                 display: none;
                 /* Initially hidden on small screens */
                 flex-direction: column;
@@ -605,13 +605,13 @@
             }
 
             .nav-menu.active a {
-                margin: 20px 0; /* Slightly reduced vertical margin */
-                padding: 5px 0; /* Reduced vertical padding on the link text */
+                margin: 15px 0; /* Reduced vertical margin */
+                padding: 5px 0; /* Kept the vertical padding on the link text */
                 display: inline-block; /* Ensure the underline spans the text width */
             }
 
             .nav-menu a {
-                margin: 0 30px; /* Increased horizontal margin */
+                margin: 0 20px; /* Slightly reduced horizontal margin */
                 position: relative; /* Needed for absolute positioning of the pseudo-element */
             }
 
@@ -620,7 +620,7 @@
                 content: '';
                 position: absolute;
                 left: 0;
-                bottom: -3px; /* Moved the underline closer to the text */
+                bottom: -3px; /* Kept the underline position */
                 width: 100%;
                 height: 2px;
                 background-color: #c780eb;
