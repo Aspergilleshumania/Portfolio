@@ -573,7 +573,8 @@
         }
 
         /* Media Queries for Responsiveness */
-       @media screen and (max-width: 768px) {
+    /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
             nav .nav-menu {
                 display: none !important;
             }
@@ -593,7 +594,7 @@
                 background-color: #080808;
                 width: 100%;
                 text-align: center;
-                padding: 10px 0;
+                padding: 15px 0; /* Increased padding around the menu items */
                 display: none;
                 /* Initially hidden on small screens */
                 flex-direction: column;
@@ -605,11 +606,12 @@
             }
 
             .nav-menu.active a {
-                margin: 20px 0; /* Increased vertical margin */
+                margin: 25px 0; /* Further increased vertical margin */
+                padding: 8px 0; /* Added vertical padding to the link text */
             }
 
             .nav-menu a {
-                margin: 0 25px; /* Increased horizontal margin for more spacing */
+                margin: 0 30px; /* Further increased horizontal margin */
             }
 
             .nav-menu a:hover::after,
