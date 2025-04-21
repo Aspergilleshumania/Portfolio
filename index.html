@@ -579,7 +579,7 @@
             }
 
             nav {
-                padding: 10px 15px; /* Reduced vertical padding of the nav */
+                padding: 10px 15px;
             }
 
             .hamburger {
@@ -589,8 +589,8 @@
 
             .hamburger .bar {
                 background-color: white;
-                height: 2px; /* Slightly reduce the height of the bars */
-                margin: 4px auto; /* Slightly reduce the margin between the bars */
+                height: 2px;
+                margin: 4px auto;
             }
 
             .hamburger.active .bar:nth-child(2) {
@@ -598,21 +598,21 @@
             }
 
             .hamburger.active .bar:nth-child(1) {
-                transform: translateY(6px) rotate(45deg); /* Adjust translation */
+                transform: translateY(6px) rotate(45deg);
             }
 
             .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-6px) rotate(-45deg); /* Adjust translation */
+                transform: translateY(-6px) rotate(-45deg);
             }
 
             .nav-menu {
                 position: absolute;
-                top: 50px; /* Adjust top position to align with the reduced nav height */
+                top: 50px;
                 left: 0;
                 background-color: #080808;
                 width: 100%;
                 text-align: center;
-                padding: 5px 0; /* Reduced padding around the menu items */
+                padding: 5px 0;
                 display: none;
                 flex-direction: column;
                 align-items: center;
@@ -623,13 +623,13 @@
             }
 
             .nav-menu.active a {
-                margin: 10px 0; /* Reduced vertical margin of links */
-                padding: 3px 0; /* Reduced vertical padding of link text */
+                margin: 10px 0;
+                padding: 3px 0;
                 display: inline-block;
             }
 
             .nav-menu a {
-                margin: 0 15px; /* Reduced horizontal margin of links */
+                margin: 0 15px;
                 position: relative;
             }
 
@@ -638,9 +638,9 @@
                 content: '';
                 position: absolute;
                 left: 0;
-                bottom: -2px; /* Adjust bottom position of the underline */
+                bottom: -2px;
                 width: 100%;
-                height: 1px; /* Reduce height of the underline */
+                height: 1px;
                 background-color: #c780eb;
                 transform: scaleX(0);
                 transform-origin: left;
@@ -657,7 +657,7 @@
                 text-align: left;
                 padding-left: 30px;
                 padding-right: 30px;
-                padding-top: 300px; /* Adjust padding to account for reduced mobile nav height */
+                padding-top: 60px;
             }
 
             #home h1 {
@@ -693,8 +693,18 @@
                 max-height: none;
             }
 
+            #about {
+                text-align: left; /* Align text within the about section to the left */
+                padding-left: 30px; /* Add left padding for consistency */
+                padding-right: 30px; /* Add right padding for consistency */
+            }
+
             #about .max-w-3xl {
-                padding: 0 20px;
+                text-align: left; /* Ensure text within the container is also left-aligned */
+            }
+
+            #about h2 {
+                text-align: left; /* Align the heading to the left as well */
             }
 
             #contact .max-w-3xl {
