@@ -943,75 +943,85 @@
 
             sections.forEach(section => observer.observe(section));
 
-            const hamburger = document.querySelector(".hamburger");
-            const navMenu = document.querySelector(".nav-menu");
-            const nav = document.querySelector("nav");
-            let lastScrollTop = 0;
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const nav = document.querySelector("nav");
+        let lastScrollTop = 0;
+        let menuOpen = false;
 
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            });
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+            nav.classList.remove("hidden"); // Ensure nav is visible when menu is opened
+            menuOpen = !menuOpen;
+        });
 
-            const navLinks = document.querySelectorAll(".nav-menu a");
+        window.addEventListener("scroll", function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            navLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    hamburger.classList.remove("active");
-                    navMenu.classList.remove("active");
-                });
-            });
-
-            window.addEventListener("scroll", function () {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScrollTop) {
-                    nav.classList.add("hidden");
-                } else {
-                    nav.classList.remove("hidden");
-                }
-                lastScrollTop = scrollTop;
-            });
-
-            const sectionsScroll = document.querySelectorAll("section");
-            const navLinksScroll = document.querySelectorAll(".nav-menu a, nav a[href^='#']");
-
-            function handleScroll() {
-                let currentSection = "";
-
-                sectionsScroll.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                        currentSection = section.getAttribute("id");
-                    }
-                });
-
-                navLinksScroll.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === "#" + currentSection) {
-                        link.classList.add("active");
-                    } else if (link.getAttribute("id") === currentSection + "-nav") {
-                        link.classList.add("active");
-                    }
-                });
+            if (menuOpen && Math.abs(scrollTop - lastScrollTop) > 5) {
+                // If menu is open and there's a significant scroll
+                nav.classList.add("hidden");
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+                menuOpen = false;
             }
 
-            window.addEventListener("scroll", handleScroll);
-            handleScroll();
+            lastScrollTop = scrollTop;
+        });
+
+        const navLinks = document.querySelectorAll(".nav-menu a");
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+                nav.classList.add("hidden"); // Hide nav after a link is clicked (optional)
+                menuOpen = false;
+            });
+        });
+
+        const sectionsScroll = document.querySelectorAll("section");
+        const navLinksScroll = document.querySelectorAll(".nav-menu a, nav a[href^='#']");
+
+        function handleScroll() {
+            let currentSection = "";
+
+            sectionsScroll.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
 
             navLinksScroll.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    if (link.getAttribute("href").startsWith("#")) {
-                        event.preventDefault();
-                        const targetId = link.getAttribute("href").substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: "smooth" });
-                        }
-                        if (window.innerWidth <= 768) {
-                            hamburger.classList.remove("active");
-                            navMenu.classList.remove("active");
-                        }
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + currentSection) {
+                    link.classList.add("active");
+                } else if (link.getAttribute("id") === currentSection + "-nav") {
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        navLinksScroll.forEach(link => {
+            link.addEventListener("click", (event) => {
+                if (link.getAttribute("href").startsWith("#")) {
+                    event.preventDefault();
+                    const targetId = link.getAttribute("href").substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" });
+                    }
+                    if (window.innerWidth <= 768) {
+                        hamburger.classList.remove("active");
+                        navMenu.classList.remove("active");
+                        nav.classList.add("hidden"); // Hide nav after smooth scroll (optional)
+                        menuOpen = false;
                     }
                 });
             });
