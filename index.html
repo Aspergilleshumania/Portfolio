@@ -713,19 +713,20 @@
             }
 
             .contact-info {
+                display: flex;
                 flex-direction: column;
-                align-items: center; /* Center items horizontally */
-                text-align: center; /* Center the text within the items */
-                margin-bottom: 30px; /* Maintain some bottom margin */
+                align-items: center;
+                margin-bottom: 30px;
+                text-align: center;
             }
 
             .contact-item {
                 display: flex;
-                align-items: center;
-                margin: 10px 0;
+                align-items: flex-start; /* Align items to the top */
+                margin: 15px 0;
                 color: #9d4edd;
                 cursor: pointer;
-                justify-content: center; /* Center the icon and text within each item */
+                gap: 15px;
             }
 
             .contact-item .icon-container {
@@ -736,9 +737,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-right: 0; /* Remove right margin as text is now centered */
-                margin-bottom: 10px; /* Add bottom margin to separate icon and text */
-                transition: background-color 0.3s ease;
+                margin-top: 3px; /* Adjust top margin for better visual alignment */
+                flex-shrink: 0; /* Prevent icon from shrinking */
             }
 
             .contact-item:hover .icon-container {
@@ -761,6 +761,9 @@
                 display: flex;
                 justify-content: center;
             }
+
+            /* ... other mobile styles ... */
+        }
 }
     </style>
 </head>
