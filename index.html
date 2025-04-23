@@ -712,24 +712,55 @@
                 text-align: center; /* Keep the heading centered */
             }
 
-            #contact .max-w-3xl {
-                padding: 0 20px;
-            }
-
             .contact-info {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center; /* Center items horizontally */
+                text-align: center; /* Center the text within the items */
+                margin-bottom: 30px; /* Maintain some bottom margin */
             }
 
             .contact-item {
+                display: flex;
+                align-items: center;
                 margin: 10px 0;
+                color: #9d4edd;
+                cursor: pointer;
+                justify-content: center; /* Center the icon and text within each item */
             }
 
-           .social-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
+            .contact-item .icon-container {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #333;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 0; /* Remove right margin as text is now centered */
+                margin-bottom: 10px; /* Add bottom margin to separate icon and text */
+                transition: background-color 0.3s ease;
+            }
+
+            .contact-item:hover .icon-container {
+                background-color: #9d4edd;
+            }
+
+            .contact-item img {
+                width: 20px;
+                height: 20px;
+                filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(248deg) brightness(95%) contrast(93%);
+                transition: filter 0.3s ease;
+            }
+
+            .contact-item:hover img {
+                filter: invert(100%);
+            }
+
+            .social-links {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+            }
 }
     </style>
 </head>
