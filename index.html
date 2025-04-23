@@ -926,110 +926,22 @@
         </div>
     </section>
 
-
 <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sections = document.querySelectorAll(".fade-in");
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        entry.target.querySelectorAll(".progress-fill").forEach(bar => {
-                            bar.style.width = bar.getAttribute("data-progress");
-                        });
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            sections.forEach(section => observer.observe(section));
-
-            const hamburger = document.querySelector(".hamburger");
-            const navMenu = document.querySelector(".nav-menu");
-            const nav = document.querySelector("nav");
-            let lastScrollTop = 0;
-
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            });
-
-            const navLinks = document.querySelectorAll(".nav-menu a");
-
-            navLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    hamburger.classList.remove("active");
-                    navMenu.classList.remove("active");
-                });
-            });
-
-            window.addEventListener("scroll", function () {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScrollTop) {
-                    nav.classList.add("hidden");
-                } else {
-                    nav.classList.remove("hidden");
+document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    entry.target.querySelectorAll(".progress-fill").forEach(bar => {
+                        bar.style.width = bar.getAttribute("data-progress");
+                    });
                 }
-                lastScrollTop = scrollTop;
             });
+        }, { threshold: 0.3 });
 
-            const sectionsScroll = document.querySelectorAll("section");
-            const navLinksScroll = document.querySelectorAll(".nav-menu a, nav a[href^='#']");
+        sections.forEach(section => observer.observe(section));
 
-            function handleScroll() {
-                let currentSection = "";
-
-                sectionsScroll.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                        currentSection = section.getAttribute("id");
-                    }
-                });
-
-                navLinksScroll.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === "#" + currentSection) {
-                        link.classList.add("active");
-                    } else if (link.getAttribute("id") === currentSection + "-nav") {
-                        link.classList.add("active");
-                    }
-                });
-            }
-
-            window.addEventListener("scroll", handleScroll);
-            handleScroll();
-
-            navLinksScroll.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    if (link.getAttribute("href").startsWith("#")) {
-                        event.preventDefault();
-                        const targetId = link.getAttribute("href").substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: "smooth" });
-                        }
-                        if (window.innerWidth <= 768) {
-                            hamburger.classList.remove("active");
-                            navMenu.classList.remove("active");
-                        }
-                    }
-                });
-            });
-
-            const contactMeButton = document.querySelector(".btn-outline");
-            if (contactMeButton) {
-                contactMeButton.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    const contactSection = document.getElementById("contact");
-                    if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: "smooth" });
-                    }
-                });
-            }
-        });
-
-    
-    document.addEventListener("DOMContentLoaded", function () {
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector(".nav-menu");
         const nav = document.querySelector("nav");
@@ -1110,21 +1022,22 @@
                         nav.classList.add("hidden"); // Hide nav after smooth scroll (optional)
                         menuOpen = false;
                     }
-                });
+                }
             });
-
-            const contactMeButton = document.querySelector(".btn-outline");
-            if (contactMeButton) {
-                contactMeButton.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    const contactSection = document.getElementById("contact");
-                    if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: "smooth" });
-                    }
-                });
-            }
         });
-    </script>
+
+        const contactMeButton = document.querySelector(".btn-outline");
+        if (contactMeButton) {
+            contactMeButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                const contactSection = document.getElementById("contact");
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        }
+    });
+</script>
 </body>
 
 </html>
